@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目描述给你一个仅由字符 &#39;0&#39; 和 &#39;1&#39; 组成的字符串 s 。一步操作中，你可以将任一 &#39;0&#39; 变成 &#39;1&#39; ，或者将 &#39;1&#39; 变成 &#39;0&#39; 。  交替字符串 定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串 &quot;010&quot; 是交替字符串，而字符串 &quot;0100&quot; 不是。  返回使 s 变成 交替字符串 所需的 最少 操作数。  &amp;nbsp;  示例 1：">
+    <meta name="description" content="题目描述    给你一个仅由字符 &#39;0&#39; 和 &#39;1&#39; 组成的字符串 s 。一步操作中，你可以将任一 &#39;0&#39; 变成 &#39;1&#39; ，或者将 &#39;1&#39; 变成 &#39;0&#39; 。   交替字符串 定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串 &quot;010&quot; 是交替字符串，而字符串 &quot;0100&quot; 不是。   返回使 s 变成 交替字符串 所需的 最少 操作数。       示例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 1758. 生成交替二进制字符串的最少操作数">
 <meta property="og:url" content="http://example.com/leetcode1758/index.html">
 <meta property="og:site_name" content="Gangxing&#39;s Blog">
-<meta property="og:description" content="题目描述给你一个仅由字符 &#39;0&#39; 和 &#39;1&#39; 组成的字符串 s 。一步操作中，你可以将任一 &#39;0&#39; 变成 &#39;1&#39; ，或者将 &#39;1&#39; 变成 &#39;0&#39; 。  交替字符串 定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串 &quot;010&quot; 是交替字符串，而字符串 &quot;0100&quot; 不是。  返回使 s 变成 交替字符串 所需的 最少 操作数。  &amp;nbsp;  示例 1：">
+<meta property="og:description" content="题目描述    给你一个仅由字符 &#39;0&#39; 和 &#39;1&#39; 组成的字符串 s 。一步操作中，你可以将任一 &#39;0&#39; 变成 &#39;1&#39; ，或者将 &#39;1&#39; 变成 &#39;0&#39; 。   交替字符串 定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串 &quot;010&quot; 是交替字符串，而字符串 &quot;0100&quot; 不是。   返回使 s 变成 交替字符串 所需的 最少 操作数。       示例">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-28T21:08:10.000Z">
 <meta property="article:modified_time" content="2022-11-28T21:08:10.000Z">
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-text">Complexity</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity"><span class="nav-text">Complexity</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -288,55 +288,73 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>给你一个仅由字符 <code>'0'</code> 和 <code>'1'</code> 组成的字符串 <code>s</code> 。一步操作中，你可以将任一 <code>'0'</code> 变成 <code>'1'</code> ，或者将 <code>'1'</code> 变成 <code>'0'</code> 。</p>
-
-<p><strong>交替字符串</strong> 定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串 <code>"010"</code> 是交替字符串，而字符串 <code>"0100"</code> 不是。</p>
-
-<p>返回使 <code>s</code> 变成 <strong>交替字符串</strong> 所需的 <strong>最少</strong> 操作数。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
-
+        <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+给你一个仅由字符 <code>'0'</code> 和 <code>'1'</code> 组成的字符串
+<code>s</code> 。一步操作中，你可以将任一 <code>'0'</code> 变成
+<code>'1'</code> ，或者将 <code>'1'</code> 变成 <code>'0'</code> 。
+</p>
+<p>
+<strong>交替字符串</strong>
+定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串
+<code>"010"</code> 是交替字符串，而字符串 <code>"0100"</code> 不是。
+</p>
+<p>
+返回使 <code>s</code> 变成 <strong>交替字符串</strong> 所需的
+<strong>最少</strong> 操作数。
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <pre><strong>输入：</strong>s = "0100"
 <strong>输出：</strong>1
 <strong>解释：</strong>如果将最后一个字符变为 '1' ，s 就变成 "0101" ，即符合交替字符串定义。
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><strong>输入：</strong>s = "10"
 <strong>输出：</strong>0
 <strong>解释：</strong>s 已经是交替字符串。
 </pre>
-
-<p><strong>示例 3：</strong></p>
-
+<p>
+<strong>示例 3：</strong>
+</p>
 <pre><strong>输入：</strong>s = "1111"
 <strong>输出：</strong>2
 <strong>解释：</strong>需要 2 步操作得到 "0101" 或 "1010" 。
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
-    <li><code>s[i]</code> 是 <code>'0'</code> 或 <code>'1'</code></li>
+<li>
+<code>1 &lt;= s.length &lt;= 10<sup>4</sup></code>
+</li>
+<li>
+<code>s[i]</code> 是 <code>'0'</code> 或 <code>'1'</code>
+</li>
 </ul>
-</div></div>
+</div>
+</div>
 <span id="more"></span>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>交替字符串只有：</p>
+<hr />
+<h2 id="解答">解答</h2>
+<p>交替字符串只有： * “1”开头的 * “0”开头的
+我就手工模拟一下，距离这两种情况的距离各是多少。
+实际上两个距离只和为size，下次二刷的时候再修改吧。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minOperations</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">bool</span> a=<span class="literal">true</span>,b=<span class="literal">false</span>;</span><br><span class="line">        <span class="type">int</span> ca=<span class="number">0</span>,cb=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=s.<span class="built_in">size</span>()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (!(s[i]==<span class="string">&#x27;1&#x27;</span>==a))&#123;</span><br><span class="line">                ca++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!(s[i]==<span class="string">&#x27;1&#x27;</span>==b))&#123;</span><br><span class="line">                cb++;</span><br><span class="line">            &#125;</span><br><span class="line">            a=!a;</span><br><span class="line">            b=!b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(ca,cb);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="complexity">Complexity</h3>
 <ul>
-<li>“1”开头的</li>
-<li>“0”开头的<br>我就手工模拟一下，距离这两种情况的距离各是多少。<br>实际上两个距离只和为size，下次二刷的时候再修改吧。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minOperations</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">bool</span> a=<span class="literal">true</span>,b=<span class="literal">false</span>;</span><br><span class="line">        <span class="type">int</span> ca=<span class="number">0</span>,cb=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;=s.<span class="built_in">size</span>()<span class="number">-1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (!(s[i]==<span class="string">&#x27;1&#x27;</span>==a))&#123;</span><br><span class="line">                ca++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (!(s[i]==<span class="string">&#x27;1&#x27;</span>==b))&#123;</span><br><span class="line">                cb++;</span><br><span class="line">            &#125;</span><br><span class="line">            a=!a;</span><br><span class="line">            b=!b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(ca,cb);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ul>
-<li>Time: $O(n)$</li>
-<li>Space: $O(1)$</li>
+<li>Time: <span class="math inline">\(O(n)\)</span></li>
+<li>Space: <span class="math inline">\(O(1)\)</span></li>
 </ul>
 
     </div>
@@ -410,7 +428,7 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

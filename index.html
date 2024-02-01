@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="I am little Gangxing.">
 <meta property="og:type" content="website">
@@ -283,41 +283,67 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA" data-track-load="qd_description_content"><p>Given two numbers <code>arr1</code> and <code>arr2</code> in base <strong>-2</strong>, return the result of adding them together.</p>
-
-<p>Each number is given in <em>array format</em>:&nbsp; as an array of 0s and 1s, from most significant bit to least significant bit.&nbsp; For example, <code>arr = [1,1,0,1]</code> represents the number <code>(-2)^3&nbsp;+ (-2)^2 + (-2)^0 = -3</code>.&nbsp; A number <code>arr</code> in <em>array, format</em> is also guaranteed to have no leading zeros: either&nbsp;<code>arr == [0]</code> or <code>arr[0] == 1</code>.</p>
-
-<p>Return the result of adding <code>arr1</code> and <code>arr2</code> in the same format: as an array of 0s and 1s with no leading zeros.</p>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA" data-track-load="qd_description_content">
+<p>
+Given two numbers <code>arr1</code> and <code>arr2</code> in base
+<strong>-2</strong>, return the result of adding them together.
+</p>
+<p>
+Each number is given in <em>array format</em>:  as an array of 0s and
+1s, from most significant bit to least significant bit.  For example,
+<code>arr = [1,1,0,1]</code> represents the number <code>(-2)^3 + (-2)^2
++ (-2)^0 = -3</code>.  A number <code>arr</code> in <em>array,
+format</em> is also guaranteed to have no leading zeros:
+either <code>arr == [0]</code> or <code>arr[0] == 1</code>.
+</p>
+<p>
+Return the result of adding <code>arr1</code> and <code>arr2</code> in
+the same format: as an array of 0s and 1s with no leading zeros.
+</p>
+<p>
+ 
+</p>
+<p>
+<strong class="example">Example 1:</strong>
+</p>
 <pre><strong>Input:</strong> arr1 = [1,1,1,1,1], arr2 = [1,0,1]
 <strong>Output:</strong> [1,0,0,0,0]
 <strong>Explanation: </strong>arr1 represents 11, arr2 represents 5, the output represents 16.
 </pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
+<p>
+<strong class="example">Example 2:</strong>
+</p>
 <pre><strong>Input:</strong> arr1 = [0], arr2 = [0]
 <strong>Output:</strong> [0]
 </pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
+<p>
+<strong class="example">Example 3:</strong>
+</p>
 <pre><strong>Input:</strong> arr1 = [0], arr2 = [1]
 <strong>Output:</strong> [1]
 </pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>Constraints:</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= arr1.length,&nbsp;arr2.length &lt;= 1000</code></li>
-    <li><code>arr1[i]</code>&nbsp;and <code>arr2[i]</code> are&nbsp;<code>0</code> or <code>1</code></li>
-    <li><code>arr1</code> and <code>arr2</code> have no leading zeros</li>
+<li>
+<code>1 &lt;= arr1.length, arr2.length &lt;= 1000</code>
+</li>
+<li>
+<code>arr1[i]</code> and <code>arr2[i]</code> are <code>0</code> or
+<code>1</code>
+</li>
+<li>
+<code>arr1</code> and <code>arr2</code> have no leading zeros
+</li>
 </ul>
-</div></div>
+</div>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode1073/#more" rel="contents">
@@ -406,52 +432,82 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA" data-track-load="qd_description_content"><p>You are given two arrays of strings that represent two inclusive events that happened <strong>on the same day</strong>, <code>event1</code> and <code>event2</code>, where:</p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA" data-track-load="qd_description_content">
+<p>
+You are given two arrays of strings that represent two inclusive events
+that happened <strong>on the same day</strong>, <code>event1</code> and
+<code>event2</code>, where:
+</p>
 <ul>
-    <li><code>event1 = [startTime<sub>1</sub>, endTime<sub>1</sub>]</code> and</li>
-    <li><code>event2 = [startTime<sub>2</sub>, endTime<sub>2</sub>]</code>.</li>
+<li>
+<code>event1 = [startTime<sub>1</sub>, endTime<sub>1</sub>]</code> and
+</li>
+<li>
+<code>event2 = [startTime<sub>2</sub>, endTime<sub>2</sub>]</code>.
+</li>
 </ul>
-
-<p>Event times are valid 24 hours format in the form of <code>HH:MM</code>.</p>
-
-<p>A <strong>conflict</strong> happens when two events have some non-empty intersection (i.e., some moment is common to both events).</p>
-
-<p>Return <code>true</code><em> if there is a conflict between two events. Otherwise, return </em><code>false</code>.</p>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-
+<p>
+Event times are valid 24 hours format in the form of <code>HH:MM</code>.
+</p>
+<p>
+A <strong>conflict</strong> happens when two events have some non-empty
+intersection (i.e., some moment is common to both events).
+</p>
+<p>
+Return <code>true</code><em> if there is a conflict between two events.
+Otherwise, return </em><code>false</code>.
+</p>
+<p>
+ 
+</p>
+<p>
+<strong class="example">Example 1:</strong>
+</p>
 <pre><strong>Input:</strong> event1 = ["01:15","02:00"], event2 = ["02:00","03:00"]
 <strong>Output:</strong> true
 <strong>Explanation:</strong> The two events intersect at time 2:00.
 </pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
+<p>
+<strong class="example">Example 2:</strong>
+</p>
 <pre><strong>Input:</strong> event1 = ["01:00","02:00"], event2 = ["01:20","03:00"]
 <strong>Output:</strong> true
 <strong>Explanation:</strong> The two events intersect starting from 01:20 to 02:00.
 </pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
+<p>
+<strong class="example">Example 3:</strong>
+</p>
 <pre><strong>Input:</strong> event1 = ["10:00","11:00"], event2 = ["14:00","15:00"]
 <strong>Output:</strong> false
 <strong>Explanation:</strong> The two events do not intersect.
 </pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>Constraints:</strong>
+</p>
 <ul>
-    <li><code>evnet1.length == event2.length == 2.</code></li>
-    <li><code>event1[i].length == event2[i].length == 5</code></li>
-    <li><code>startTime<sub>1</sub> &lt;= endTime<sub>1</sub></code></li>
-    <li><code>startTime<sub>2</sub> &lt;= endTime<sub>2</sub></code></li>
-    <li>All the event times follow the <code>HH:MM</code> format.</li>
+<li>
+<code>evnet1.length == event2.length == 2.</code>
+</li>
+<li>
+<code>event1[i].length == event2[i].length == 5</code>
+</li>
+<li>
+<code>startTime<sub>1</sub> &lt;= endTime<sub>1</sub></code>
+</li>
+<li>
+<code>startTime<sub>2</sub> &lt;= endTime<sub>2</sub></code>
+</li>
+<li>
+All the event times follow the <code>HH:MM</code> format.
+</li>
 </ul>
-</div></div>
+</div>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode2446/#more" rel="contents">
@@ -540,46 +596,71 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA" data-track-load="qd_description_content"><p>You are given a string <code>text</code>. You should split it to k substrings <code>(subtext<sub>1</sub>, subtext<sub>2</sub>, ..., subtext<sub>k</sub>)</code> such that:</p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA" data-track-load="qd_description_content">
+<p>
+You are given a string <code>text</code>. You should split it to k
+substrings <code>(subtext<sub>1</sub>, subtext<sub>2</sub>, ...,
+subtext<sub>k</sub>)</code> such that:
+</p>
 <ul>
-    <li><code>subtext<sub>i</sub></code> is a <strong>non-empty</strong> string.</li>
-    <li>The concatenation of all the substrings is equal to <code>text</code> (i.e., <code>subtext<sub>1</sub> + subtext<sub>2</sub> + ... + subtext<sub>k</sub> == text</code>).</li>
-    <li><code>subtext<sub>i</sub> == subtext<sub>k - i + 1</sub></code> for all valid values of <code>i</code> (i.e., <code>1 &lt;= i &lt;= k</code>).</li>
+<li>
+<code>subtext<sub>i</sub></code> is a <strong>non-empty</strong> string.
+</li>
+<li>
+The concatenation of all the substrings is equal to <code>text</code>
+(i.e., <code>subtext<sub>1</sub> + subtext<sub>2</sub> + ... +
+subtext<sub>k</sub> == text</code>).
+</li>
+<li>
+<code>subtext<sub>i</sub> == subtext<sub>k - i + 1</sub></code> for all
+valid values of <code>i</code> (i.e., <code>1 &lt;= i &lt;= k</code>).
+</li>
 </ul>
-
-<p>Return the largest possible value of <code>k</code>.</p>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-
+<p>
+Return the largest possible value of <code>k</code>.
+</p>
+<p>
+ 
+</p>
+<p>
+<strong class="example">Example 1:</strong>
+</p>
 <pre><strong>Input:</strong> text = "ghiabcdefhelloadamhelloabcdefghi"
 <strong>Output:</strong> 7
 <strong>Explanation:</strong> We can split the string on "(ghi)(abcdef)(hello)(adam)(hello)(abcdef)(ghi)".
 </pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
+<p>
+<strong class="example">Example 2:</strong>
+</p>
 <pre><strong>Input:</strong> text = "merchant"
 <strong>Output:</strong> 1
 <strong>Explanation:</strong> We can split the string on "(merchant)".
 </pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
+<p>
+<strong class="example">Example 3:</strong>
+</p>
 <pre><strong>Input:</strong> text = "antaprezatepzapreanta"
 <strong>Output:</strong> 11
 <strong>Explanation:</strong> We can split the string on "(a)(nt)(a)(pre)(za)(tep)(za)(pre)(a)(nt)(a)".
 </pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>Constraints:</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= text.length &lt;= 1000</code></li>
-    <li><code>text</code> consists only of lowercase English characters.</li>
+<li>
+<code>1 &lt;= text.length &lt;= 1000</code>
+</li>
+<li>
+<code>text</code> consists only of lowercase English characters.
+</li>
 </ul>
-</div></div>
+</div>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode1147/#more" rel="contents">
@@ -668,7 +749,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>来介绍一下如何在$\LaTeX$中写中文的两种方法。</p>
+          <p>来介绍一下如何在<span
+class="math inline">\(\LaTeX\)</span>中写中文的两种方法。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/latex-chinese-character/#more" rel="contents">
@@ -757,36 +839,50 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="_1l1MA"><p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
+          <h2 id="题目描述">题目描述</h2>
+<div class="_1l1MA">
+<p>
+将两个升序链表合并为一个新的 <strong>升序</strong>
+链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <img alt="" src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg" style="width: 662px; height: 302px;">
 <pre><strong>输入：</strong>l1 = [1,2,4], l2 = [1,3,4]
 <strong>输出：</strong>[1,1,2,3,4,4]
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><strong>输入：</strong>l1 = [], l2 = []
 <strong>输出：</strong>[]
 </pre>
-
-<p><strong>示例 3：</strong></p>
-
+<p>
+<strong>示例 3：</strong>
+</p>
 <pre><strong>输入：</strong>l1 = [], l2 = [0]
 <strong>输出：</strong>[0]
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li>两个链表的节点数目范围是 <code>[0, 50]</code></li>
-    <li><code>-100 &lt;= Node.val &lt;= 100</code></li>
-    <li><code>l1</code> 和 <code>l2</code> 均按 <strong>非递减顺序</strong> 排列</li>
+<li>
+两个链表的节点数目范围是 <code>[0, 50]</code>
+</li>
+<li>
+<code>-100 &lt;= Node.val &lt;= 100</code>
+</li>
+<li>
+<code>l1</code> 和 <code>l2</code> 均按 <strong>非递减顺序</strong> 排列
+</li>
 </ul>
 </div>
           <!--noindex-->
@@ -877,43 +973,59 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>给定一个由 <strong>整数 </strong>组成的<strong> 非空</strong> 数组所表示的非负整数，在该数的基础上加一。</p>
-
-<p>最高位数字存放在数组的首位， 数组中每个元素只存储<strong>单个</strong>数字。</p>
-
-<p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例&nbsp;1：</strong></p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+给定一个由 <strong>整数 </strong>组成的<strong> 非空</strong>
+数组所表示的非负整数，在该数的基础上加一。
+</p>
+<p>
+最高位数字存放在数组的首位，
+数组中每个元素只存储<strong>单个</strong>数字。
+</p>
+<p>
+你可以假设除了整数 0 之外，这个整数不会以零开头。
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <pre><strong>输入：</strong>digits = [1,2,3]
 <strong>输出：</strong>[1,2,4]
 <strong>解释：</strong>输入数组表示数字 123。
 </pre>
-
-<p><strong>示例&nbsp;2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><strong>输入：</strong>digits = [4,3,2,1]
 <strong>输出：</strong>[4,3,2,2]
 <strong>解释：</strong>输入数组表示数字 4321。
 </pre>
-
-<p><strong>示例 3：</strong></p>
-
+<p>
+<strong>示例 3：</strong>
+</p>
 <pre><strong>输入：</strong>digits = [0]
 <strong>输出：</strong>[1]
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= digits.length &lt;= 100</code></li>
-    <li><code>0 &lt;= digits[i] &lt;= 9</code></li>
+<li>
+<code>1 &lt;= digits.length &lt;= 100</code>
+</li>
+<li>
+<code>0 &lt;= digits[i] &lt;= 9</code>
+</li>
 </ul>
-</div></div>
+</div>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode66/#more" rel="contents">
@@ -1002,44 +1114,63 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>给你一个仅由字符 <code>'0'</code> 和 <code>'1'</code> 组成的字符串 <code>s</code> 。一步操作中，你可以将任一 <code>'0'</code> 变成 <code>'1'</code> ，或者将 <code>'1'</code> 变成 <code>'0'</code> 。</p>
-
-<p><strong>交替字符串</strong> 定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串 <code>"010"</code> 是交替字符串，而字符串 <code>"0100"</code> 不是。</p>
-
-<p>返回使 <code>s</code> 变成 <strong>交替字符串</strong> 所需的 <strong>最少</strong> 操作数。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+给你一个仅由字符 <code>'0'</code> 和 <code>'1'</code> 组成的字符串
+<code>s</code> 。一步操作中，你可以将任一 <code>'0'</code> 变成
+<code>'1'</code> ，或者将 <code>'1'</code> 变成 <code>'0'</code> 。
+</p>
+<p>
+<strong>交替字符串</strong>
+定义为：如果字符串中不存在相邻两个字符相等的情况，那么该字符串就是交替字符串。例如，字符串
+<code>"010"</code> 是交替字符串，而字符串 <code>"0100"</code> 不是。
+</p>
+<p>
+返回使 <code>s</code> 变成 <strong>交替字符串</strong> 所需的
+<strong>最少</strong> 操作数。
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <pre><strong>输入：</strong>s = "0100"
 <strong>输出：</strong>1
 <strong>解释：</strong>如果将最后一个字符变为 '1' ，s 就变成 "0101" ，即符合交替字符串定义。
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><strong>输入：</strong>s = "10"
 <strong>输出：</strong>0
 <strong>解释：</strong>s 已经是交替字符串。
 </pre>
-
-<p><strong>示例 3：</strong></p>
-
+<p>
+<strong>示例 3：</strong>
+</p>
 <pre><strong>输入：</strong>s = "1111"
 <strong>输出：</strong>2
 <strong>解释：</strong>需要 2 步操作得到 "0101" 或 "1010" 。
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
-    <li><code>s[i]</code> 是 <code>'0'</code> 或 <code>'1'</code></li>
+<li>
+<code>1 &lt;= s.length &lt;= 10<sup>4</sup></code>
+</li>
+<li>
+<code>s[i]</code> 是 <code>'0'</code> 或 <code>'1'</code>
+</li>
 </ul>
-</div></div>
+</div>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode1758/#more" rel="contents">
@@ -1128,43 +1259,67 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>Given a string <code>s</code> containing just the characters <code>'('</code>, <code>')'</code>, <code>'&#123;'</code>, <code>'&#125;'</code>, <code>'['</code> and <code>']'</code>, determine if the input string is valid.</p>
-
-<p>An input string is valid if:</p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+Given a string <code>s</code> containing just the characters
+<code>'('</code>, <code>')'</code>, <code>'&#123;'</code>, <code>'&#125;'</code>,
+<code>'['</code> and <code>']'</code>, determine if the input string is
+valid.
+</p>
+<p>
+An input string is valid if:
+</p>
 <ol>
-    <li>Open brackets must be closed by the same type of brackets.</li>
-    <li>Open brackets must be closed in the correct order.</li>
-    <li>Every close bracket has a corresponding open bracket of the same type.</li>
+<li>
+Open brackets must be closed by the same type of brackets.
+</li>
+<li>
+Open brackets must be closed in the correct order.
+</li>
+<li>
+Every close bracket has a corresponding open bracket of the same type.
+</li>
 </ol>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong class="example">Example 1:</strong>
+</p>
 <pre><strong>Input:</strong> s = "()"
 <strong>Output:</strong> true
 </pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
+<p>
+<strong class="example">Example 2:</strong>
+</p>
 <pre><strong>Input:</strong> s = "()[]{}"
 <strong>Output:</strong> true
 </pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
+<p>
+<strong class="example">Example 3:</strong>
+</p>
 <pre><strong>Input:</strong> s = "(]"
 <strong>Output:</strong> false
 </pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>Constraints:</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
-    <li><code>s</code> consists of parentheses only <code>'()[]&#123;&#125;'</code>.</li>
+<li>
+<code>1 &lt;= s.length &lt;= 10<sup>4</sup></code>
+</li>
+<li>
+<code>s</code> consists of parentheses only
+<code>'()<span></span>'</code>.
+</li>
 </ul>
-</div></div>
+</div>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode20/#more" rel="contents">
@@ -1254,35 +1409,52 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>Given the <code>root</code> of a binary tree, return <em>the level order traversal of its nodes' values</em>. (i.e., from left to right, level by level).</p>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+          <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+Given the <code>root</code> of a binary tree, return <em>the level order
+traversal of its nodes' values</em>. (i.e., from left to right, level by
+level).
+</p>
+<p>
+ 
+</p>
+<p>
+<strong class="example">Example 1:</strong>
+</p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg" style="width: 277px; height: 302px;">
 <pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
 <strong>Output:</strong> [[3],[9,20],[15,7]]
 </pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
+<p>
+<strong class="example">Example 2:</strong>
+</p>
 <pre><strong>Input:</strong> root = [1]
 <strong>Output:</strong> [[1]]
 </pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
+<p>
+<strong class="example">Example 3:</strong>
+</p>
 <pre><strong>Input:</strong> root = []
 <strong>Output:</strong> []
 </pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>Constraints:</strong>
+</p>
 <ul>
-    <li>The number of nodes in the tree is in the range <code>[0, 2000]</code>.</li>
-    <li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+<li>
+The number of nodes in the tree is in the range <code>[0, 2000]</code>.
+</li>
+<li>
+<code>-1000 &lt;= Node.val &lt;= 1000</code>
+</li>
 </ul>
-</div></div>
+</div>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode102/#more" rel="contents">
@@ -1371,24 +1543,42 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>You are working in a ball factory where you have <code>n</code> balls numbered from <code>lowLimit</code> up to <code>highLimit</code> <strong>inclusive</strong> (i.e., <code>n == highLimit - lowLimit + 1</code>), and an infinite number of boxes numbered from <code>1</code> to <code>infinity</code>.</p>
-
-<p>Your job at this factory is to put each ball in the box with a number equal to the sum of digits of the ball's number. For example, the ball number <code>321</code> will be put in the box number <code>3 + 2 + 1 = 6</code> and the ball number <code>10</code> will be put in the box number <code>1 + 0 = 1</code>.</p>
-
-<p>Given two integers <code>lowLimit</code> and <code>highLimit</code>, return<em> the number of balls in the box with the most balls.</em></p>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+You are working in a ball factory where you have <code>n</code> balls
+numbered from <code>lowLimit</code> up to <code>highLimit</code>
+<strong>inclusive</strong> (i.e., <code>n == highLimit - lowLimit +
+1</code>), and an infinite number of boxes numbered from <code>1</code>
+to <code>infinity</code>.
+</p>
+<p>
+Your job at this factory is to put each ball in the box with a number
+equal to the sum of digits of the ball's number. For example, the ball
+number <code>321</code> will be put in the box number <code>3 + 2 + 1 =
+6</code> and the ball number <code>10</code> will be put in the box
+number <code>1 + 0 = 1</code>.
+</p>
+<p>
+Given two integers <code>lowLimit</code> and <code>highLimit</code>,
+return<em> the number of balls in the box with the most balls.</em>
+</p>
+<p>
+ 
+</p>
+<p>
+<strong class="example">Example 1:</strong>
+</p>
 <pre><strong>Input:</strong> lowLimit = 1, highLimit = 10
 <strong>Output:</strong> 2
 <strong>Explanation:</strong>
 Box Number:  1 2 3 4 5 6 7 8 9 10 11 ...
 Ball Count:  2 1 1 1 1 1 1 1 1 0  0  ...
 Box 1 has the most number of balls with 2 balls.</pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
+<p>
+<strong class="example">Example 2:</strong>
+</p>
 <pre><strong>Input:</strong> lowLimit = 5, highLimit = 15
 <strong>Output:</strong> 2
 <strong>Explanation:</strong>
@@ -1396,9 +1586,9 @@ Box Number:  1 2 3 4 5 6 7 8 9 10 11 ...
 Ball Count:  1 1 1 1 2 2 1 1 1 0  0  ...
 Boxes 5 and 6 have the most number of balls with 2 balls in each.
 </pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
+<p>
+<strong class="example">Example 3:</strong>
+</p>
 <pre><strong>Input:</strong> lowLimit = 19, highLimit = 28
 <strong>Output:</strong> 2
 <strong>Explanation:</strong>
@@ -1406,14 +1596,19 @@ Box Number:  1 2 3 4 5 6 7 8 9 10 11 12 ...
 Ball Count:  0 1 1 1 1 1 1 1 1 2  0  0  ...
 Box 10 has the most number of balls with 2 balls.
 </pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>Constraints:</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= lowLimit &lt;= highLimit &lt;= 10<sup>5</sup></code></li>
+<li>
+<code>1 &lt;= lowLimit &lt;= highLimit &lt;= 10<sup>5</sup></code>
+</li>
 </ul>
-</div></div>
+</div>
+</div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode1742/#more" rel="contents">
@@ -1452,7 +1647,7 @@ Box 10 has the most number of balls with 2 balls.
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

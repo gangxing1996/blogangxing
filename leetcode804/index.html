@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目描述国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串，&amp;nbsp;比如:       &#39;a&#39; 对应 &quot;.-&quot; ，     &#39;b&#39; 对应 &quot;-...&quot; ，     &#39;c&#39; 对应 &quot;-.-.&quot; ，以此类推。   为了方便，所有 26 个英文字母的摩尔斯密码表如下：  [&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....">
+    <meta name="description" content="题目描述   国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串， 比如:    &#39;a&#39; 对应 &quot;.-&quot; ，   &#39;b&#39; 对应 &quot;-...&quot; ，   &#39;c&#39; 对应 &quot;-.-.&quot; ，以此类推。    为了方便，所有 26 个英文字母的摩尔斯密码表如下：  [&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 804. 唯一摩尔斯密码词">
 <meta property="og:url" content="http://example.com/leetcode804/index.html">
 <meta property="og:site_name" content="Gangxing&#39;s Blog">
-<meta property="og:description" content="题目描述国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串，&amp;nbsp;比如:       &#39;a&#39; 对应 &quot;.-&quot; ，     &#39;b&#39; 对应 &quot;-...&quot; ，     &#39;c&#39; 对应 &quot;-.-.&quot; ，以此类推。   为了方便，所有 26 个英文字母的摩尔斯密码表如下：  [&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....">
+<meta property="og:description" content="题目描述   国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串， 比如:    &#39;a&#39; 对应 &quot;.-&quot; ，   &#39;b&#39; 对应 &quot;-...&quot; ，   &#39;c&#39; 对应 &quot;-.-.&quot; ，以此类推。    为了方便，所有 26 个英文字母的摩尔斯密码表如下：  [&quot;.-&quot;,&quot;-...&quot;,&quot;-.-.&quot;,&quot;-..&quot;,&quot;.&quot;,&quot;..-.&quot;,&quot;--.&quot;,&quot;....&quot;,&quot;..&quot;,&quot;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-10T15:14:08.000Z">
 <meta property="article:modified_time" content="2022-04-10T15:14:08.000Z">
@@ -288,30 +288,47 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="notranslate"><p>国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串，&nbsp;比如:</p>
-
+        <h2 id="题目描述">题目描述</h2>
+<div class="notranslate">
+<p>
+国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串， 比如:
+</p>
 <ul>
-    <li><code>'a'</code> 对应 <code>".-"</code> ，</li>
-    <li><code>'b'</code> 对应 <code>"-..."</code> ，</li>
-    <li><code>'c'</code> 对应 <code>"-.-."</code> ，以此类推。</li>
+<li>
+<code>'a'</code> 对应 <code>".-"</code> ，
+</li>
+<li>
+<code>'b'</code> 对应 <code>"-..."</code> ，
+</li>
+<li>
+<code>'c'</code> 对应 <code>"-.-."</code> ，以此类推。
+</li>
 </ul>
-
-<p>为了方便，所有 <code>26</code> 个英文字母的摩尔斯密码表如下：</p>
-
+<p>
+为了方便，所有 <code>26</code> 个英文字母的摩尔斯密码表如下：
+</p>
 <pre>[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]</pre>
-
-<p>给你一个字符串数组 <code>words</code> ，每个单词可以写成每个字母对应摩尔斯密码的组合。</p>
-
+<p>
+给你一个字符串数组 <code>words</code>
+，每个单词可以写成每个字母对应摩尔斯密码的组合。
+</p>
 <ul>
-    <li>例如，<code>"cab"</code> 可以写成 <code>"-.-..--..."</code> ，(即 <code>"-.-."</code> + <code>".-"</code> + <code>"-..."</code> 字符串的结合)。我们将这样一个连接过程称作 <strong>单词翻译</strong> 。</li>
+<li>
+例如，<code>"cab"</code> 可以写成 <code>"-.-..--..."</code> ，(即
+<code>"-.-."</code> + <code>".-"</code> + <code>"-..."</code>
+字符串的结合)。我们将这样一个连接过程称作 <strong>单词翻译</strong> 。
+</li>
 </ul>
-
-<p>对<strong> </strong><code>words</code> 中所有单词进行单词翻译，返回不同 <strong>单词翻译</strong> 的数量。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
-
+<p>
+对<strong> </strong><code>words</code> 中所有单词进行单词翻译，返回不同
+<strong>单词翻译</strong> 的数量。
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <pre><strong>输入:</strong> words = ["gin", "zen", "gig", "msg"]
 <strong>输出:</strong> 2
 <strong>解释: </strong>
@@ -323,27 +340,34 @@
 
 共有 2 种不同翻译, "--...-." 和 "--...--.".
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><strong>输入：</strong>words = ["a"]
 <strong>输出：</strong>1
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= words.length &lt;= 100</code></li>
-    <li><code>1 &lt;= words[i].length &lt;= 12</code></li>
-    <li><code>words[i]</code> 由小写英文字母组成</li>
+<li>
+<code>1 &lt;= words.length &lt;= 100</code>
+</li>
+<li>
+<code>1 &lt;= words[i].length &lt;= 12</code>
+</li>
+<li>
+<code>words[i]</code> 由小写英文字母组成
+</li>
 </ul>
 </div>
 <span id="more"></span>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;string&gt; dict=&#123;<span class="string">&quot;.-&quot;</span>,<span class="string">&quot;-...&quot;</span>,<span class="string">&quot;-.-.&quot;</span>,<span class="string">&quot;-..&quot;</span>,<span class="string">&quot;.&quot;</span>,<span class="string">&quot;..-.&quot;</span>,<span class="string">&quot;--.&quot;</span>,<span class="string">&quot;....&quot;</span>,<span class="string">&quot;..&quot;</span>,<span class="string">&quot;.---&quot;</span>,<span class="string">&quot;-.-&quot;</span>,<span class="string">&quot;.-..&quot;</span>,<span class="string">&quot;--&quot;</span>,<span class="string">&quot;-.&quot;</span>,<span class="string">&quot;---&quot;</span>,<span class="string">&quot;.--.&quot;</span>,<span class="string">&quot;--.-&quot;</span>,<span class="string">&quot;.-.&quot;</span>,<span class="string">&quot;...&quot;</span>,<span class="string">&quot;-&quot;</span>,<span class="string">&quot;..-&quot;</span>,<span class="string">&quot;...-&quot;</span>,<span class="string">&quot;.--&quot;</span>,<span class="string">&quot;-..-&quot;</span>,<span class="string">&quot;-.--&quot;</span>,<span class="string">&quot;--..&quot;</span>&#125;;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">uniqueMorseRepresentations</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">    unordered_set&lt;string&gt; cyphers;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;word: words)&#123;</span><br><span class="line">        string cypher;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c: word)&#123;</span><br><span class="line">            cypher.<span class="built_in">append</span>(dict[c-<span class="string">&#x27;a&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        cyphers.<span class="built_in">emplace</span>(cypher);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (cyphers.<span class="built_in">size</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="解答">解答</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;string&gt; dict=&#123;<span class="string">&quot;.-&quot;</span>,<span class="string">&quot;-...&quot;</span>,<span class="string">&quot;-.-.&quot;</span>,<span class="string">&quot;-..&quot;</span>,<span class="string">&quot;.&quot;</span>,<span class="string">&quot;..-.&quot;</span>,<span class="string">&quot;--.&quot;</span>,<span class="string">&quot;....&quot;</span>,<span class="string">&quot;..&quot;</span>,<span class="string">&quot;.---&quot;</span>,<span class="string">&quot;-.-&quot;</span>,<span class="string">&quot;.-..&quot;</span>,<span class="string">&quot;--&quot;</span>,<span class="string">&quot;-.&quot;</span>,<span class="string">&quot;---&quot;</span>,<span class="string">&quot;.--.&quot;</span>,<span class="string">&quot;--.-&quot;</span>,<span class="string">&quot;.-.&quot;</span>,<span class="string">&quot;...&quot;</span>,<span class="string">&quot;-&quot;</span>,<span class="string">&quot;..-&quot;</span>,<span class="string">&quot;...-&quot;</span>,<span class="string">&quot;.--&quot;</span>,<span class="string">&quot;-..-&quot;</span>,<span class="string">&quot;-.--&quot;</span>,<span class="string">&quot;--..&quot;</span>&#125;;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">uniqueMorseRepresentations</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">    unordered_set&lt;string&gt; cyphers;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;word: words)&#123;</span><br><span class="line">        string cypher;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c: word)&#123;</span><br><span class="line">            cypher.<span class="built_in">append</span>(dict[c-<span class="string">&#x27;a&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        cyphers.<span class="built_in">emplace</span>(cypher);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (cyphers.<span class="built_in">size</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -416,7 +440,7 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

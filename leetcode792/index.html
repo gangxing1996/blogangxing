@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目描述给定字符串 s&amp;nbsp;和字符串数组&amp;nbsp;words, 返回&amp;nbsp;&amp;nbsp;words[i]&amp;nbsp;中是s的子序列的单词个数&amp;nbsp;。  字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。       例如， “ace” 是 “abcde” 的子序列。   &amp;nbsp;  示例 1:  输入: s">
+    <meta name="description" content="题目描述    给定字符串 s 和字符串数组 words, 返回  words[i] 中是s的子序列的单词个数 。   字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。    例如， “ace” 是 “abcde” 的子序列。        示例 1:  输入: s &#x3D; &quot;abcde&quot;, words &#x3D; [&quot;a&quot;,&quot;bb&quot;,&quot;a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 792. 匹配子序列的单词数">
 <meta property="og:url" content="http://example.com/leetcode792/index.html">
 <meta property="og:site_name" content="Gangxing&#39;s Blog">
-<meta property="og:description" content="题目描述给定字符串 s&amp;nbsp;和字符串数组&amp;nbsp;words, 返回&amp;nbsp;&amp;nbsp;words[i]&amp;nbsp;中是s的子序列的单词个数&amp;nbsp;。  字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。       例如， “ace” 是 “abcde” 的子序列。   &amp;nbsp;  示例 1:  输入: s">
+<meta property="og:description" content="题目描述    给定字符串 s 和字符串数组 words, 返回  words[i] 中是s的子序列的单词个数 。   字符串的 子序列 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。    例如， “ace” 是 “abcde” 的子序列。        示例 1:  输入: s &#x3D; &quot;abcde&quot;, words &#x3D; [&quot;a&quot;,&quot;bb&quot;,&quot;a">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T02:46:31.000Z">
 <meta property="article:modified_time" content="2022-11-19T03:22:19.000Z">
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-text">Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="nav-text">题外话</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity"><span class="nav-text">Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="nav-text">题外话</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -289,54 +289,81 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>给定字符串 <code>s</code>&nbsp;和字符串数组&nbsp;<code>words</code>, 返回&nbsp;&nbsp;<em><code>words[i]</code>&nbsp;中是<code>s</code>的子序列的单词个数</em>&nbsp;。</p>
-
-<p>字符串的 <strong>子序列</strong> 是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。</p>
-
+        <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+给定字符串 <code>s</code> 和字符串数组 <code>words</code>,
+返回  <em><code>words[i]</code> 中是<code>s</code>的子序列的单词个数</em> 。
+</p>
+<p>
+字符串的 <strong>子序列</strong>
+是从原始字符串中生成的新字符串，可以从中删去一些字符(可以是none)，而不改变其余字符的相对顺序。
+</p>
 <ul>
-    <li>例如， <code>“ace”</code> 是 <code>“abcde”</code> 的子序列。</li>
+<li>
+例如， <code>“ace”</code> 是 <code>“abcde”</code> 的子序列。
+</li>
 </ul>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>示例 1:</strong>
+</p>
 <pre><strong>输入:</strong> s = "abcde", words = ["a","bb","acd","ace"]
 <strong>输出:</strong> 3
 <strong>解释:</strong> 有三个是&nbsp;s 的子序列的单词: "a", "acd", "ace"。
 </pre>
-
-<p><strong>Example 2:</strong></p>
-
+<p>
+<strong>Example 2:</strong>
+</p>
 <pre><strong>输入: </strong>s = "dsahjpjauf", words = ["ahjpjau","ja","ahbwzgqnuk","tnmlanowax"]
 <strong>输出:</strong> 2
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示:</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>
-    <li><code>1 &lt;= words.length &lt;= 5000</code></li>
-    <li><code>1 &lt;= words[i].length &lt;= 50</code></li>
-    <li><code>words[i]</code>和 <font color="#c7254e" face="Menlo, Monaco, Consolas, Courier New, monospace"><span style="font-size: 12.6px; background-color: rgb(249, 242, 244);">s</span></font>&nbsp;都只由小写字母组成。</li>
+<li>
+<code>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code>
+</li>
+<li>
+<code>1 &lt;= words.length &lt;= 5000</code>
+</li>
+<li>
+<code>1 &lt;= words[i].length &lt;= 50</code>
+</li>
+<li>
+<code>words[i]</code>和
+<font color="#c7254e" face="Menlo, Monaco, Consolas, Courier New, monospace"><span
+style="font-size: 12.6px; background-color: rgb(249, 242, 244);">s</span></font> 都只由小写字母组成。
+</li>
 </ul>
-<span style="display: block;"><span style="height: 0px;"><span style="position: absolute;">​​​​</span></span></span></div></div>
+<span style="display: block;"><span style="height: 0px;"><span
+style="position: absolute;">​​​​</span></span></span>
+</div>
+</div>
 <span id="more"></span>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>很容易想到将words整理，并且每看一个c in s就将所有匹配到的word的ptr++。</p>
+<hr />
+<h2 id="解答">解答</h2>
+<p>很容易想到将words整理，并且每看一个c in
+s就将所有匹配到的word的ptr++。</p>
 <p>一开始想到用排序的方法整理，那样每次都需要nlogn的时间，并且找到匹配的word还要logn的时间。</p>
-<p>考虑到c和word都是离散的，直接用个map存就可以了。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numMatchingSubseq</span><span class="params">(string s, vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>,queue&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt;&gt; map;</span><br><span class="line">        <span class="comment">// In the pair, first is the order of word in words,</span></span><br><span class="line">        <span class="comment">// second is the location of ptr in the word</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;words.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            map[words[i][<span class="number">0</span>]].<span class="built_in">push</span>(<span class="built_in">make_pair</span>(i,<span class="number">0</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> c:s)&#123;</span><br><span class="line">            <span class="type">int</span> size=map[c].<span class="built_in">size</span>();</span><br><span class="line">            <span class="keyword">while</span>(size--)&#123;</span><br><span class="line">                <span class="keyword">auto</span> ptr=map[c].<span class="built_in">front</span>();</span><br><span class="line">                map[c].<span class="built_in">pop</span>();</span><br><span class="line">                <span class="keyword">if</span> (ptr.second==(words[ptr.first].<span class="built_in">size</span>()<span class="number">-1</span>))&#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    map[words[ptr.first][ptr.second+<span class="number">1</span>]].<span class="built_in">emplace</span>(<span class="built_in">make_pair</span>(ptr.first,ptr.second+<span class="number">1</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ul>
-<li>Time: $O(s.size+\sum words[i].size)$</li>
-<li>Space: $O(words.size)$</li>
+<p>考虑到c和word都是离散的，直接用个map存就可以了。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numMatchingSubseq</span><span class="params">(string s, vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>,queue&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt;&gt; map;</span><br><span class="line">        <span class="comment">// In the pair, first is the order of word in words,</span></span><br><span class="line">        <span class="comment">// second is the location of ptr in the word</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;words.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            map[words[i][<span class="number">0</span>]].<span class="built_in">push</span>(<span class="built_in">make_pair</span>(i,<span class="number">0</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> c:s)&#123;</span><br><span class="line">            <span class="type">int</span> size=map[c].<span class="built_in">size</span>();</span><br><span class="line">            <span class="keyword">while</span>(size--)&#123;</span><br><span class="line">                <span class="keyword">auto</span> ptr=map[c].<span class="built_in">front</span>();</span><br><span class="line">                map[c].<span class="built_in">pop</span>();</span><br><span class="line">                <span class="keyword">if</span> (ptr.second==(words[ptr.first].<span class="built_in">size</span>()<span class="number">-1</span>))&#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    map[words[ptr.first][ptr.second+<span class="number">1</span>]].<span class="built_in">emplace</span>(<span class="built_in">make_pair</span>(ptr.first,ptr.second+<span class="number">1</span>));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Time: <span class="math inline">\(O(s.size+\sum
+words[i].size)\)</span></li>
+<li>Space: <span class="math inline">\(O(words.size)\)</span></li>
 </ul>
-<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><ul>
-<li>C++ STL中的<code>queue</code>不支持<code>iterator</code>，如有需求请使用<code>deque</code>。</li>
+<h2 id="题外话">题外话</h2>
+<ul>
+<li>C++
+STL中的<code>queue</code>不支持<code>iterator</code>，如有需求请使用<code>deque</code>。</li>
 </ul>
 
     </div>
@@ -410,7 +437,7 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

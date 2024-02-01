@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目描述有一个自行车手打算进行一场公路骑行，这条路线总共由&amp;nbsp;n + 1&amp;nbsp;个不同海拔的点组成。自行车手从海拔为 0&amp;nbsp;的点&amp;nbsp;0&amp;nbsp;开始骑行。  给你一个长度为 n&amp;nbsp;的整数数组&amp;nbsp;gain&amp;nbsp;，其中 gain[i]&amp;nbsp;是点 i&amp;nbsp;和点 i + 1&amp;nbsp;的 净海拔高度差（0 &lt;&#x3D; i &lt; n）。请你">
+    <meta name="description" content="题目描述    有一个自行车手打算进行一场公路骑行，这条路线总共由 n + 1 个不同海拔的点组成。自行车手从海拔为 0 的点 0 开始骑行。   给你一个长度为 n 的整数数组 gain ，其中 gain[i] 是点 i 和点 i + 1 的 净海拔高度差（0 &lt;&#x3D; i &lt; n）。请你返回 最高点的海拔 。       示例 1：  输入：gain &#x3D; [-5,1,5,0,-7] 输">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 1732. 找到最高海拔">
 <meta property="og:url" content="http://example.com/leetcode1732/index.html">
 <meta property="og:site_name" content="Gangxing&#39;s Blog">
-<meta property="og:description" content="题目描述有一个自行车手打算进行一场公路骑行，这条路线总共由&amp;nbsp;n + 1&amp;nbsp;个不同海拔的点组成。自行车手从海拔为 0&amp;nbsp;的点&amp;nbsp;0&amp;nbsp;开始骑行。  给你一个长度为 n&amp;nbsp;的整数数组&amp;nbsp;gain&amp;nbsp;，其中 gain[i]&amp;nbsp;是点 i&amp;nbsp;和点 i + 1&amp;nbsp;的 净海拔高度差（0 &lt;&#x3D; i &lt; n）。请你">
+<meta property="og:description" content="题目描述    有一个自行车手打算进行一场公路骑行，这条路线总共由 n + 1 个不同海拔的点组成。自行车手从海拔为 0 的点 0 开始骑行。   给你一个长度为 n 的整数数组 gain ，其中 gain[i] 是点 i 和点 i + 1 的 净海拔高度差（0 &lt;&#x3D; i &lt; n）。请你返回 最高点的海拔 。       示例 1：  输入：gain &#x3D; [-5,1,5,0,-7] 输">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-21T05:36:01.000Z">
 <meta property="article:modified_time" content="2022-11-21T05:36:01.000Z">
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-text">Complexity</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity"><span class="nav-text">Complexity</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -288,45 +288,64 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>有一个自行车手打算进行一场公路骑行，这条路线总共由&nbsp;<code>n + 1</code>&nbsp;个不同海拔的点组成。自行车手从海拔为 <code>0</code>&nbsp;的点&nbsp;<code>0</code>&nbsp;开始骑行。</p>
-
-<p>给你一个长度为 <code>n</code>&nbsp;的整数数组&nbsp;<code>gain</code>&nbsp;，其中 <code>gain[i]</code>&nbsp;是点 <code>i</code>&nbsp;和点 <code>i + 1</code>&nbsp;的 <strong>净海拔高度差</strong>（<code>0 &lt;= i &lt; n</code>）。请你返回 <strong>最高点的海拔</strong> 。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
-
+        <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+有一个自行车手打算进行一场公路骑行，这条路线总共由 <code>n +
+1</code> 个不同海拔的点组成。自行车手从海拔为
+<code>0</code> 的点 <code>0</code> 开始骑行。
+</p>
+<p>
+给你一个长度为 <code>n</code> 的整数数组 <code>gain</code> ，其中
+<code>gain[i]</code> 是点 <code>i</code> 和点 <code>i + 1</code> 的
+<strong>净海拔高度差</strong>（<code>0 &lt;= i &lt; n</code>）。请你返回
+<strong>最高点的海拔</strong> 。
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <pre><b>输入：</b>gain = [-5,1,5,0,-7]
 <b>输出：</b>1
 <b>解释：</b>海拔高度依次为 [0,-5,-4,1,1,-6] 。最高海拔为 1 。
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><b>输入：</b>gain = [-4,-3,-2,-1,4,3,2]
 <b>输出：</b>0
 <b>解释：</b>海拔高度依次为 [0,-4,-7,-9,-10,-6,-3,-1] 。最高海拔为 0 。
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>n == gain.length</code></li>
-    <li><code>1 &lt;= n &lt;= 100</code></li>
-    <li><code>-100 &lt;= gain[i] &lt;= 100</code></li>
+<li>
+<code>n == gain.length</code>
+</li>
+<li>
+<code>1 &lt;= n &lt;= 100</code>
+</li>
+<li>
+<code>-100 &lt;= gain[i] &lt;= 100</code>
+</li>
 </ul>
-</div></div>
+</div>
+</div>
 <span id="more"></span>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>Easy 不解释</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">largestAltitude</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; gain)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> now=<span class="number">0</span>,maxi=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> i:gain)&#123;</span><br><span class="line">            now+=i;</span><br><span class="line">            maxi=<span class="built_in">max</span>(now,maxi);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxi;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ul>
-<li>Time: $O(n)$</li>
-<li>Space: $O(n)$</li>
+<hr />
+<h2 id="解答">解答</h2>
+<p>Easy 不解释 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">largestAltitude</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; gain)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> now=<span class="number">0</span>,maxi=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> i:gain)&#123;</span><br><span class="line">            now+=i;</span><br><span class="line">            maxi=<span class="built_in">max</span>(now,maxi);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxi;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Time: <span class="math inline">\(O(n)\)</span></li>
+<li>Space: <span class="math inline">\(O(n)\)</span></li>
 </ul>
 
     </div>
@@ -400,7 +419,7 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

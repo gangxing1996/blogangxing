@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="问题前几天搭建完成了Blog。用vscode remote可以轻松修改新建页面.md文件。但是由于vscode clipboard api中目前没有同步图片。导致vscode 插件无法远程在markdown中贴图。这就没法一键打人。不能忍。">
+    <meta name="description" content="问题 前几天搭建完成了Blog。用vscode remote可以轻松修改新建页面.md文件。 但是由于vscode clipboard api中目前没有同步图片。导致vscode 插件无法远程在markdown中贴图。 这就没法一键打人。不能忍。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 网页远程编辑与存储">
 <meta property="og:url" content="http://example.com/hexo-remote-storage/index.html">
 <meta property="og:site_name" content="Gangxing&#39;s Blog">
-<meta property="og:description" content="问题前几天搭建完成了Blog。用vscode remote可以轻松修改新建页面.md文件。但是由于vscode clipboard api中目前没有同步图片。导致vscode 插件无法远程在markdown中贴图。这就没法一键打人。不能忍。">
+<meta property="og:description" content="问题 前几天搭建完成了Blog。用vscode remote可以轻松修改新建页面.md文件。 但是由于vscode clipboard api中目前没有同步图片。导致vscode 插件无法远程在markdown中贴图。 这就没法一键打人。不能忍。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-08T12:04:33.000Z">
 <meta property="article:modified_time" content="2022-04-08T12:05:23.000Z">
@@ -289,10 +289,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>前几天搭建完成了Blog。用vscode remote可以轻松修改新建页面.md文件。<br>但是由于vscode clipboard api中目前没有同步图片。导致vscode 插件无法远程在markdown中贴图。<br>这就没法一键打人。不能忍。</p>
-<span id="more"></span>
-<p>为此思考解决方案。</p>
-<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><p>使用NAS进行储存Hexo中所有的页面文件，即&#x2F;source文件夹。<br>再通过NFS等远程文件协议的方式，将nas中的source文件夹，共享至Hexo server和编辑器电脑。<br>如此对于server和editor来说都仿佛是在本地操作。</p>
+        <h3 id="问题">问题</h3>
+<p>前几天搭建完成了Blog。用vscode remote可以轻松修改新建页面.md文件。
+但是由于vscode clipboard api中目前没有同步图片。导致vscode
+插件无法远程在markdown中贴图。 这就没法一键打人。不能忍。 <span id="more"></span>
+为此思考解决方案。</p>
+<h3 id="解决思路">解决思路</h3>
+<p>使用NAS进行储存Hexo中所有的页面文件，即/source文件夹。
+再通过NFS等远程文件协议的方式，将nas中的source文件夹，共享至Hexo
+server和编辑器电脑。 如此对于server和editor来说都仿佛是在本地操作。</p>
 
     </div>
 
@@ -365,7 +370,7 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

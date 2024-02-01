@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目描述Given the root of a binary tree, return the level order traversal of its nodes&#39; values. (i.e., from left to right, level by level).  &amp;nbsp; Example 1:  Input: root &#x3D; [3,9,20,null,null,15,7] Output">
+    <meta name="description" content="题目描述    Given the root of a binary tree, return the level order traversal of its nodes&#39; values. (i.e., from left to right, level by level).       Example 1:   Input: root &#x3D; [3,9,20,null,null,15,7] Out">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 102. Binary Tree Level Order Traversal">
 <meta property="og:url" content="http://example.com/leetcode102/index.html">
 <meta property="og:site_name" content="Gangxing&#39;s Blog">
-<meta property="og:description" content="题目描述Given the root of a binary tree, return the level order traversal of its nodes&#39; values. (i.e., from left to right, level by level).  &amp;nbsp; Example 1:  Input: root &#x3D; [3,9,20,null,null,15,7] Output">
+<meta property="og:description" content="题目描述    Given the root of a binary tree, return the level order traversal of its nodes&#39; values. (i.e., from left to right, level by level).       Example 1:   Input: root &#x3D; [3,9,20,null,null,15,7] Out">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg">
 <meta property="article:published_time" content="2022-11-23T08:46:56.000Z">
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-text">Complexity</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity"><span class="nav-text">Complexity</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -291,44 +291,62 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>Given the <code>root</code> of a binary tree, return <em>the level order traversal of its nodes' values</em>. (i.e., from left to right, level by level).</p>
-
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+        <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+Given the <code>root</code> of a binary tree, return <em>the level order
+traversal of its nodes' values</em>. (i.e., from left to right, level by
+level).
+</p>
+<p>
+ 
+</p>
+<p>
+<strong class="example">Example 1:</strong>
+</p>
 <img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg" style="width: 277px; height: 302px;">
 <pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
 <strong>Output:</strong> [[3],[9,20],[15,7]]
 </pre>
-
-<p><strong class="example">Example 2:</strong></p>
-
+<p>
+<strong class="example">Example 2:</strong>
+</p>
 <pre><strong>Input:</strong> root = [1]
 <strong>Output:</strong> [[1]]
 </pre>
-
-<p><strong class="example">Example 3:</strong></p>
-
+<p>
+<strong class="example">Example 3:</strong>
+</p>
 <pre><strong>Input:</strong> root = []
 <strong>Output:</strong> []
 </pre>
-
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>Constraints:</strong>
+</p>
 <ul>
-    <li>The number of nodes in the tree is in the range <code>[0, 2000]</code>.</li>
-    <li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+<li>
+The number of nodes in the tree is in the range <code>[0, 2000]</code>.
+</li>
+<li>
+<code>-1000 &lt;= Node.val &lt;= 1000</code>
+</li>
 </ul>
-</div></div>
+</div>
+</div>
 <span id="more"></span>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>就是BFS，每一层分割一下。<br>注意2D的vector要新增一行，push的部分是个1D的vector，而new出来的是个指针，需要再指向一下。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">levelOrder</span>(TreeNode* root) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ans;</span><br><span class="line">    <span class="type">int</span> layer=<span class="number">0</span>;</span><br><span class="line">    deque&lt;TreeNode*&gt; *q=<span class="keyword">new</span> deque&lt;TreeNode*&gt; ,*q2=<span class="keyword">new</span> deque&lt;TreeNode*&gt;,*qtmp;</span><br><span class="line">        <span class="keyword">if</span> (root==<span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        (*q).<span class="built_in">push_back</span>(root);</span><br><span class="line">        <span class="keyword">while</span>(q-&gt;<span class="built_in">size</span>()!=<span class="number">0</span>||q2-&gt;<span class="built_in">size</span>()!=<span class="number">0</span>)&#123;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(*<span class="keyword">new</span> vector&lt;<span class="type">int</span>&gt;);</span><br><span class="line">            <span class="keyword">while</span>((*q).<span class="built_in">size</span>())&#123;</span><br><span class="line">                ans[layer].<span class="built_in">push_back</span>(q-&gt;<span class="built_in">front</span>()-&gt;val);</span><br><span class="line">                <span class="keyword">if</span> (q-&gt;<span class="built_in">front</span>()-&gt;left!=<span class="literal">nullptr</span>)</span><br><span class="line">                    q2-&gt;<span class="built_in">push_back</span>(q-&gt;<span class="built_in">front</span>()-&gt;left);</span><br><span class="line">                <span class="keyword">if</span> (q-&gt;<span class="built_in">front</span>()-&gt;right!=<span class="literal">nullptr</span>)</span><br><span class="line">                    q2-&gt;<span class="built_in">push_back</span>(q-&gt;<span class="built_in">front</span>()-&gt;right);</span><br><span class="line">                q-&gt;<span class="built_in">pop_front</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            qtmp=q;</span><br><span class="line">            q=q2;</span><br><span class="line">            q2=qtmp;</span><br><span class="line">            layer++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ul>
-<li>Time: $O(n)$</li>
-<li>Space: $O(n)$</li>
+<hr />
+<h2 id="解答">解答</h2>
+<p>就是BFS，每一层分割一下。
+注意2D的vector要新增一行，push的部分是个1D的vector，而new出来的是个指针，需要再指向一下。
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() : val(0), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">levelOrder</span>(TreeNode* root) &#123;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ans;</span><br><span class="line">    <span class="type">int</span> layer=<span class="number">0</span>;</span><br><span class="line">    deque&lt;TreeNode*&gt; *q=<span class="keyword">new</span> deque&lt;TreeNode*&gt; ,*q2=<span class="keyword">new</span> deque&lt;TreeNode*&gt;,*qtmp;</span><br><span class="line">        <span class="keyword">if</span> (root==<span class="literal">nullptr</span>)</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        (*q).<span class="built_in">push_back</span>(root);</span><br><span class="line">        <span class="keyword">while</span>(q-&gt;<span class="built_in">size</span>()!=<span class="number">0</span>||q2-&gt;<span class="built_in">size</span>()!=<span class="number">0</span>)&#123;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(*<span class="keyword">new</span> vector&lt;<span class="type">int</span>&gt;);</span><br><span class="line">            <span class="keyword">while</span>((*q).<span class="built_in">size</span>())&#123;</span><br><span class="line">                ans[layer].<span class="built_in">push_back</span>(q-&gt;<span class="built_in">front</span>()-&gt;val);</span><br><span class="line">                <span class="keyword">if</span> (q-&gt;<span class="built_in">front</span>()-&gt;left!=<span class="literal">nullptr</span>)</span><br><span class="line">                    q2-&gt;<span class="built_in">push_back</span>(q-&gt;<span class="built_in">front</span>()-&gt;left);</span><br><span class="line">                <span class="keyword">if</span> (q-&gt;<span class="built_in">front</span>()-&gt;right!=<span class="literal">nullptr</span>)</span><br><span class="line">                    q2-&gt;<span class="built_in">push_back</span>(q-&gt;<span class="built_in">front</span>()-&gt;right);</span><br><span class="line">                q-&gt;<span class="built_in">pop_front</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            qtmp=q;</span><br><span class="line">            q=q2;</span><br><span class="line">            q2=qtmp;</span><br><span class="line">            layer++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Time: <span class="math inline">\(O(n)\)</span></li>
+<li>Space: <span class="math inline">\(O(n)\)</span></li>
 </ul>
 
     </div>
@@ -402,7 +420,7 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

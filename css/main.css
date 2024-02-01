@@ -2822,7 +2822,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #3dece2;
+  background: #7dccac;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2867,15 +2867,18 @@ hr {
 body {
   background-color: var(--main_color);
 }
-body div.column {
+body header.header {
   background-image: url("/images/kirby-30th-wallpaper-repeat.png");
   background-repeat: repeat-x;
   background-attachment: scroll;
   background-size: auto 200%;
   background-position: 100% 100%;
 }
-body div.column header.header {
+body header.header .header-inner {
   background-color: var(--menu_color);
+}
+body header.header .header-inner .site-nav a i {
+  margin-right: 8px;
 }
 body .sidebar {
   background: var(--sidebar_color);

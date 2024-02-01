@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="I am little Gangxing.">
 <meta property="og:type" content="website">
@@ -290,7 +290,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <iframe src="//player.bilibili.com/player.html?aid=896003833&bvid=BV1qA4y1X7Br&cid=586386342&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+          <iframe src="//player.bilibili.com/player.html?aid=896003833&amp;bvid=BV1qA4y1X7Br&amp;cid=586386342&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+</iframe>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/kang-china-food/#more" rel="contents">
@@ -375,9 +376,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在题目 <strong>Leetcode 806. 写字符串需要的行数</strong> 中发现一个问题。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">numberOfLines</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; widths, string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> l=<span class="number">1</span>,u=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c:s)&#123;</span><br><span class="line">            <span class="keyword">if</span> ((u+widths[c-<span class="string">&#x27;a&#x27;</span>])&gt;<span class="number">100</span>)&#123;</span><br><span class="line">                u=widths[c-<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                u+=widths[c-<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> vector&lt;<span class="type">int</span>&gt;&#123;l,u&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>中的第6行 <code>int l=1,u=0;</code>。其中u是非初始化为<strong>0</strong>将会影响结果。<br>当没有初始化为<strong>0</strong>的时候，u的初始值有一定概率是其他值。</p>
+          <h2 id="问题描述">问题描述</h2>
+<p>在题目 <strong>Leetcode 806. 写字符串需要的行数</strong>
+中发现一个问题。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">numberOfLines</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; widths, string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> l=<span class="number">1</span>,u=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;c:s)&#123;</span><br><span class="line">            <span class="keyword">if</span> ((u+widths[c-<span class="string">&#x27;a&#x27;</span>])&gt;<span class="number">100</span>)&#123;</span><br><span class="line">                u=widths[c-<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                u+=widths[c-<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> vector&lt;<span class="type">int</span>&gt;&#123;l,u&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure> 中的第6行
+<code>int l=1,u=0;</code>。其中u是非初始化为<strong>0</strong>将会影响结果。
+当没有初始化为<strong>0</strong>的时候，u的初始值有一定概率是其他值。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/cpp-init-var/#more" rel="contents">
@@ -466,10 +469,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="notranslate"><p>我们要把给定的字符串 <code>S</code>&nbsp;从左到右写到每一行上，每一行的最大宽度为100个单位，如果我们在写某个字母的时候会使这行超过了100 个单位，那么我们应该把这个字母写到下一行。我们给定了一个数组&nbsp;<code>widths</code>&nbsp;，这个数组&nbsp;widths[0] 代表 'a' 需要的单位，&nbsp;widths[1] 代表 'b' 需要的单位，...，&nbsp;widths[25] 代表 'z' 需要的单位。</p>
-
-<p>现在回答两个问题：至少多少行能放下<code>S</code>，以及最后一行使用的宽度是多少个单位？将你的答案作为长度为2的整数列表返回。</p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="notranslate">
+<p>
+我们要把给定的字符串
+<code>S</code> 从左到右写到每一行上，每一行的最大宽度为100个单位，如果我们在写某个字母的时候会使这行超过了100
+个单位，那么我们应该把这个字母写到下一行。我们给定了一个数组 <code>widths</code> ，这个数组 widths[0]
+代表 'a' 需要的单位， widths[1] 代表 'b' 需要的单位，...， widths[25]
+代表 'z' 需要的单位。
+</p>
+<p>
+现在回答两个问题：至少多少行能放下<code>S</code>，以及最后一行使用的宽度是多少个单位？将你的答案作为长度为2的整数列表返回。
+</p>
 <pre><strong>示例 1:</strong>
 <strong>输入:</strong> 
 widths = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
@@ -479,7 +490,6 @@ S = "abcdefghijklmnopqrstuvwxyz"
 </strong>所有的字符拥有相同的占用单位10。所以书写所有的26个字母，
 我们需要2个整行和占用60个单位的一行。
 </pre>
-
 <pre><strong>示例 2:</strong>
 <strong>输入:</strong> 
 widths = [4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
@@ -490,16 +500,25 @@ S = "bbbcccdddaaa"
 最后一个字母 'a' 将会被写到第二行，因为第一行只剩下2个单位了。
 所以，这个答案是2行，第二行有4个单位宽度。
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>注:</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>注:</strong>
+</p>
 <ul>
-    <li>字符串&nbsp;<code>S</code> 的长度在&nbsp;[1, 1000] 的范围。</li>
-    <li><code>S</code> 只包含小写字母。</li>
-    <li><code>widths</code> 是长度为&nbsp;<code>26</code>的数组。</li>
-    <li><code>widths[i]</code>&nbsp;值的范围在&nbsp;<code>[2, 10]</code>。</li>
+<li>
+字符串 <code>S</code> 的长度在 [1, 1000] 的范围。
+</li>
+<li>
+<code>S</code> 只包含小写字母。
+</li>
+<li>
+<code>widths</code> 是长度为 <code>26</code>的数组。
+</li>
+<li>
+<code>widths[i]</code> 值的范围在 <code>[2, 10]</code>。
+</li>
 </ul>
 </div>
           <!--noindex-->
@@ -590,32 +609,41 @@ S = "bbbcccdddaaa"
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="notranslate">给你一个整数 <code>n</code> ，统计并返回各位数字都不同的数字 <code>x</code> 的个数，其中 <code>0 &lt;= x &lt; 10<sup>n</sup></code><sup>&nbsp;</sup>。
+          <h2 id="题目描述">题目描述</h2>
+<div class="notranslate">
+给你一个整数 <code>n</code> ，统计并返回各位数字都不同的数字
+<code>x</code> 的个数，其中 <code>0 &lt;= x &lt;
+10<sup>n</sup></code><sup> </sup>。
 <div class="original__bRMd">
 <div>
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <pre><strong>输入：</strong>n = 2
 <strong>输出：</strong>91
 <strong>解释：</strong>答案应为除去 <code>11、22、33、44、55、66、77、88、99 </code>外，在 0 ≤ x &lt; 100 范围内的所有数字。 
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><strong>输入：</strong>n = 0
 <strong>输出：</strong>1
 </pre>
 </div>
 </div>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>0 &lt;= n &lt;= 8</code></li>
+<li>
+<code>0 &lt;= n &lt;= 8</code>
+</li>
 </ul>
 </div>
           <!--noindex-->
@@ -693,7 +721,8 @@ S = "bbbcccdddaaa"
     
     
     <div class="post-body" itemprop="articleBody">
-          <iframe src="//player.bilibili.com/player.html?aid=672964562&bvid=BV1LU4y1t7ge&cid=334735119&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+          <iframe src="//player.bilibili.com/player.html?aid=672964562&amp;bvid=BV1LU4y1t7ge&amp;cid=334735119&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+</iframe>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/test/#more" rel="contents">
@@ -782,30 +811,47 @@ S = "bbbcccdddaaa"
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="notranslate"><p>国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串，&nbsp;比如:</p>
-
+          <h2 id="题目描述">题目描述</h2>
+<div class="notranslate">
+<p>
+国际摩尔斯密码定义一种标准编码方式，将每个字母对应于一个由一系列点和短线组成的字符串， 比如:
+</p>
 <ul>
-    <li><code>'a'</code> 对应 <code>".-"</code> ，</li>
-    <li><code>'b'</code> 对应 <code>"-..."</code> ，</li>
-    <li><code>'c'</code> 对应 <code>"-.-."</code> ，以此类推。</li>
+<li>
+<code>'a'</code> 对应 <code>".-"</code> ，
+</li>
+<li>
+<code>'b'</code> 对应 <code>"-..."</code> ，
+</li>
+<li>
+<code>'c'</code> 对应 <code>"-.-."</code> ，以此类推。
+</li>
 </ul>
-
-<p>为了方便，所有 <code>26</code> 个英文字母的摩尔斯密码表如下：</p>
-
+<p>
+为了方便，所有 <code>26</code> 个英文字母的摩尔斯密码表如下：
+</p>
 <pre>[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]</pre>
-
-<p>给你一个字符串数组 <code>words</code> ，每个单词可以写成每个字母对应摩尔斯密码的组合。</p>
-
+<p>
+给你一个字符串数组 <code>words</code>
+，每个单词可以写成每个字母对应摩尔斯密码的组合。
+</p>
 <ul>
-    <li>例如，<code>"cab"</code> 可以写成 <code>"-.-..--..."</code> ，(即 <code>"-.-."</code> + <code>".-"</code> + <code>"-..."</code> 字符串的结合)。我们将这样一个连接过程称作 <strong>单词翻译</strong> 。</li>
+<li>
+例如，<code>"cab"</code> 可以写成 <code>"-.-..--..."</code> ，(即
+<code>"-.-."</code> + <code>".-"</code> + <code>"-..."</code>
+字符串的结合)。我们将这样一个连接过程称作 <strong>单词翻译</strong> 。
+</li>
 </ul>
-
-<p>对<strong> </strong><code>words</code> 中所有单词进行单词翻译，返回不同 <strong>单词翻译</strong> 的数量。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
-
+<p>
+对<strong> </strong><code>words</code> 中所有单词进行单词翻译，返回不同
+<strong>单词翻译</strong> 的数量。
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <pre><strong>输入:</strong> words = ["gin", "zen", "gig", "msg"]
 <strong>输出:</strong> 2
 <strong>解释: </strong>
@@ -817,21 +863,28 @@ S = "bbbcccdddaaa"
 
 共有 2 种不同翻译, "--...-." 和 "--...--.".
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><strong>输入：</strong>words = ["a"]
 <strong>输出：</strong>1
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= words.length &lt;= 100</code></li>
-    <li><code>1 &lt;= words[i].length &lt;= 12</code></li>
-    <li><code>words[i]</code> 由小写英文字母组成</li>
+<li>
+<code>1 &lt;= words.length &lt;= 100</code>
+</li>
+<li>
+<code>1 &lt;= words[i].length &lt;= 12</code>
+</li>
+<li>
+<code>words[i]</code> 由小写英文字母组成
+</li>
 </ul>
 </div>
           <!--noindex-->
@@ -922,7 +975,8 @@ S = "bbbcccdddaaa"
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p><img src="https://i.imgur.com/Evb93Sn.png"></p>
+          <h2 id="question">Question</h2>
+<p><img src="https://i.imgur.com/Evb93Sn.png" />
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/leetcode233/#more" rel="contents">
@@ -998,8 +1052,7 @@ S = "bbbcccdddaaa"
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="/5%E8%B1%86.gif"><br>5豆.gif</p>
-<hr>
+          <p><img src="5豆.gif" /> 5豆.gif ---
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Kirbot_pic_list/#more" rel="contents">
@@ -1089,7 +1142,10 @@ S = "bbbcccdddaaa"
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>前几天搭建完成了Blog。用vscode remote可以轻松修改新建页面.md文件。<br>但是由于vscode clipboard api中目前没有同步图片。导致vscode 插件无法远程在markdown中贴图。<br>这就没法一键打人。不能忍。</p>
+          <h3 id="问题">问题</h3>
+<p>前几天搭建完成了Blog。用vscode remote可以轻松修改新建页面.md文件。
+但是由于vscode clipboard api中目前没有同步图片。导致vscode
+插件无法远程在markdown中贴图。 这就没法一键打人。不能忍。
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/hexo-remote-storage/#more" rel="contents">
@@ -1185,7 +1241,7 @@ S = "bbbcccdddaaa"
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="/retro-game-web/2022-04-08-19-50-58.png">  </p>
+          <p><img src="2022-04-08-19-50-58.png" /></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/retro-game-web/#more" rel="contents">
@@ -1224,7 +1280,7 @@ S = "bbbcccdddaaa"
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

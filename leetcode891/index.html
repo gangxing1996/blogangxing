@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目描述一个序列的 宽度 定义为该序列中最大元素和最小元素的差值。  给你一个整数数组 nums ，返回 nums 的所有非空 子序列 的 宽度之和 。由于答案可能非常大，请返回对 109 + 7 取余 后的结果。  子序列 定义为从一个数组里删除一些（或者不删除）元素，但不改变剩下元素的顺序得到的数组。例如，[3,6,2,7] 就是数组 [0,3,1,6,2,2,7] 的一个子序列。  &amp;nbs">
+    <meta name="description" content="题目描述    一个序列的 宽度 定义为该序列中最大元素和最小元素的差值。   给你一个整数数组 nums ，返回 nums 的所有非空 子序列 的 宽度之和 。由于答案可能非常大，请返回对 109 + 7 取余 后的结果。   子序列 定义为从一个数组里删除一些（或者不删除）元素，但不改变剩下元素的顺序得到的数组。例如，[3,6,2,7] 就是数组 [0,3,1,6,2,2,7] 的一个子序列。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 891. 子序列宽度之和">
 <meta property="og:url" content="http://example.com/leetcode891/index.html">
 <meta property="og:site_name" content="Gangxing&#39;s Blog">
-<meta property="og:description" content="题目描述一个序列的 宽度 定义为该序列中最大元素和最小元素的差值。  给你一个整数数组 nums ，返回 nums 的所有非空 子序列 的 宽度之和 。由于答案可能非常大，请返回对 109 + 7 取余 后的结果。  子序列 定义为从一个数组里删除一些（或者不删除）元素，但不改变剩下元素的顺序得到的数组。例如，[3,6,2,7] 就是数组 [0,3,1,6,2,2,7] 的一个子序列。  &amp;nbs">
+<meta property="og:description" content="题目描述    一个序列的 宽度 定义为该序列中最大元素和最小元素的差值。   给你一个整数数组 nums ，返回 nums 的所有非空 子序列 的 宽度之和 。由于答案可能非常大，请返回对 109 + 7 取余 后的结果。   子序列 定义为从一个数组里删除一些（或者不删除）元素，但不改变剩下元素的顺序得到的数组。例如，[3,6,2,7] 就是数组 [0,3,1,6,2,2,7] 的一个子序列。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-19T05:56:12.000Z">
 <meta property="article:modified_time" content="2022-11-19T05:56:12.000Z">
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-text">Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="nav-text">题外话</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#complexity"><span class="nav-text">Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="nav-text">题外话</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -288,59 +288,83 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>一个序列的 <strong>宽度</strong> 定义为该序列中最大元素和最小元素的差值。</p>
-
-<p>给你一个整数数组 <code>nums</code> ，返回 <code>nums</code> 的所有非空 <strong>子序列</strong> 的 <strong>宽度之和</strong> 。由于答案可能非常大，请返回对 <code>10<sup>9</sup> + 7</code> <strong>取余</strong> 后的结果。</p>
-
-<p><strong>子序列</strong> 定义为从一个数组里删除一些（或者不删除）元素，但不改变剩下元素的顺序得到的数组。例如，<code>[3,6,2,7]</code> 就是数组 <code>[0,3,1,6,2,2,7]</code> 的一个子序列。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
-
+        <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+一个序列的 <strong>宽度</strong>
+定义为该序列中最大元素和最小元素的差值。
+</p>
+<p>
+给你一个整数数组 <code>nums</code> ，返回 <code>nums</code> 的所有非空
+<strong>子序列</strong> 的 <strong>宽度之和</strong>
+。由于答案可能非常大，请返回对 <code>10<sup>9</sup> + 7</code>
+<strong>取余</strong> 后的结果。
+</p>
+<p>
+<strong>子序列</strong>
+定义为从一个数组里删除一些（或者不删除）元素，但不改变剩下元素的顺序得到的数组。例如，<code>[3,6,2,7]</code>
+就是数组 <code>[0,3,1,6,2,2,7]</code> 的一个子序列。
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
 <pre><strong>输入：</strong>nums = [2,1,3]
 <strong>输出：</strong>6
 <strong>解释：</strong>子序列为 [1], [2], [3], [2,1], [2,3], [1,3], [2,1,3] 。
 相应的宽度是 0, 0, 0, 1, 1, 2, 2 。
 宽度之和是 6 。
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
 <pre><strong>输入：</strong>nums = [2]
 <strong>输出：</strong>0
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
-    <li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li>
+<code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code>
+</li>
+<li>
+<code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code>
+</li>
 </ul>
-</div></div>
+</div>
+</div>
 <span id="more"></span>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>注意阅读题目，题目中说的序列&#x2F;子序列，实际上是集合和子集合。<br>将集合排序为序列。<br>对于每一个数字，贡献最大值的情况为加，贡献最小值的情况为减。<br>每个数字只对其左边的子集合作最大值，对右边的子集合作最小值。</p>
-<p>详情见onenote。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> mod=<span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumSubseqWidths</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span>  ans=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">vpow</span><span class="params">(nums.size(),<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            vpow[i]=(vpow[i<span class="number">-1</span>]&lt;&lt;<span class="number">1</span>)%mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            ans+=nums[i]*(vpow[i]-vpow[nums.<span class="built_in">size</span>()-i<span class="number">-1</span>])%mod;</span><br><span class="line">            ans%=mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<hr />
+<h2 id="解答">解答</h2>
+<p>注意阅读题目，题目中说的序列/子序列，实际上是集合和子集合。
+将集合排序为序列。
+对于每一个数字，贡献最大值的情况为加，贡献最小值的情况为减。
+每个数字只对其左边的子集合作最大值，对右边的子集合作最小值。</p>
+<p>详情见onenote。 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> mod=<span class="number">1000000007</span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumSubseqWidths</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span>  ans=<span class="number">0</span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">vpow</span><span class="params">(nums.size(),<span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            vpow[i]=(vpow[i<span class="number">-1</span>]&lt;&lt;<span class="number">1</span>)%mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;nums.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            ans+=nums[i]*(vpow[i]-vpow[nums.<span class="built_in">size</span>()-i<span class="number">-1</span>])%mod;</span><br><span class="line">            ans%=mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>【C++】数学（乘法）</p>
 <p>假如数组：[2,1,3],因为子序列顺序不会对结果产生影响</p>
-<p>比如它的子序列[1], [2], [3], [2,1], [2,3], [1,3], [2,1,3] 跟[1,2,3]的子序列[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]最终结果是一样的</p>
+<p>比如它的子序列[1], [2], [3], [2,1], [2,3], [1,3], [2,1,3]
+跟[1,2,3]的子序列[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]最终结果是一样的</p>
 <p>所以我们按照递增排序后讨论，这样每个元素都比它左边大或相等(作为最大值)，比它右边小(作为最小值)</p>
-<p>那么我们只需要讨论每个元素左右的贡献值，我们不妨拿数字2作为例子，那么它作为最大值贡献了2^i次(i&#x3D;1,排序后)，作为最小值贡献了2^(n-i-1)次,可以用数学归纳证明</p>
+<p>那么我们只需要讨论每个元素左右的贡献值，我们不妨拿数字2作为例子，那么它作为最大值贡献了2<sup>i次(i=1,排序后)，作为最小值贡献了2</sup>(n-i-1)次,可以用数学归纳证明</p>
 <p>(这里略)，注：贡献都包含本身统计，结果相减没影响</p>
-<p>结果就是每个数贡献值相加sum(2^i-2^(n-i-1))*nums[i])</p>
+<p>结果就是每个数贡献值相加sum(2<sup>i-2</sup>(n-i-1))*nums[i])</p>
 </blockquote>
-<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ul>
-<li>Time: $O(nlogn)$</li>
-<li>Space: $O(n)$</li>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Time: <span class="math inline">\(O(nlogn)\)</span></li>
+<li>Space: <span class="math inline">\(O(n)\)</span></li>
 </ul>
-<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><ul>
+<h2 id="题外话">题外话</h2>
+<ul>
 <li>注意取模分配律</li>
 </ul>
 
@@ -415,7 +439,7 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -18,22 +18,22 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目描述在一个 n x n 的矩阵&amp;nbsp;grid&amp;nbsp;中，除了在数组&amp;nbsp;mines&amp;nbsp;中给出的元素为&amp;nbsp;0，其他每个元素都为&amp;nbsp;1。mines[i] &#x3D; [xi, yi]表示&amp;nbsp;grid[xi][yi] &#x3D;&#x3D; 0  返回 &amp;nbsp;grid 中包含&amp;nbsp;1&amp;nbsp;的最大的 轴对齐 加号标志的阶数 。如果未找到加号标志，则返回 0 。">
+    <meta name="description" content="题目描述    在一个 n x n 的矩阵 grid 中，除了在数组 mines 中给出的元素为 0，其他每个元素都为 1。mines[i] &#x3D; [xi, yi]表示 grid[xi][yi] &#x3D;&#x3D; 0   返回  grid 中包含 1 的最大的 轴对齐 加号标志的阶数 。如果未找到加号标志，则返回 0 。   一个 k 阶由 1 组成的 “轴对称”加号标志 具有中心网格 grid[r][c] &#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode 764. 最大加号标志">
 <meta property="og:url" content="http://example.com/leetcode764/index.html">
 <meta property="og:site_name" content="Gangxing&#39;s Blog">
-<meta property="og:description" content="题目描述在一个 n x n 的矩阵&amp;nbsp;grid&amp;nbsp;中，除了在数组&amp;nbsp;mines&amp;nbsp;中给出的元素为&amp;nbsp;0，其他每个元素都为&amp;nbsp;1。mines[i] &#x3D; [xi, yi]表示&amp;nbsp;grid[xi][yi] &#x3D;&#x3D; 0  返回 &amp;nbsp;grid 中包含&amp;nbsp;1&amp;nbsp;的最大的 轴对齐 加号标志的阶数 。如果未找到加号标志，则返回 0 。">
+<meta property="og:description" content="题目描述    在一个 n x n 的矩阵 grid 中，除了在数组 mines 中给出的元素为 0，其他每个元素都为 1。mines[i] &#x3D; [xi, yi]表示 grid[xi][yi] &#x3D;&#x3D; 0   返回  grid 中包含 1 的最大的 轴对齐 加号标志的阶数 。如果未找到加号标志，则返回 0 。   一个 k 阶由 1 组成的 “轴对称”加号标志 具有中心网格 grid[r][c] &#x3D;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2021/06/13/plus1-grid.jpg">
 <meta property="og:image" content="https://assets.leetcode.com/uploads/2021/06/13/plus2-grid.jpg">
 <meta property="article:published_time" content="2022-11-09T12:26:49.000Z">
 <meta property="article:modified_time" content="2022-11-09T12:26:49.000Z">
 <meta property="article:author" content="gangxing">
-<meta property="article:tag" content="Leetcode">
 <meta property="article:tag" content="重建">
+<meta property="article:tag" content="Leetcode">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://assets.leetcode.com/uploads/2021/06/13/plus1-grid.jpg">
 
@@ -147,7 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complexity"><span class="nav-text">Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="nav-text">题外话</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-text">解答</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -292,55 +292,89 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><div class="px-5 pt-4"><div class="_1l1MA"><p>在一个 <code>n x n</code> 的矩阵&nbsp;<code>grid</code>&nbsp;中，除了在数组&nbsp;<code>mines</code>&nbsp;中给出的元素为&nbsp;<code>0</code>，其他每个元素都为&nbsp;<code>1</code>。<code>mines[i] = [x<sub>i</sub>, y<sub>i</sub>]</code>表示&nbsp;<code>grid[x<sub>i</sub>][y<sub>i</sub>] == 0</code></p>
-
-<p>返回 <em>&nbsp;</em><code>grid</code><em> 中包含&nbsp;<code>1</code>&nbsp;的最大的 <strong>轴对齐</strong> 加号标志的阶数</em> 。如果未找到加号标志，则返回 <code>0</code> 。</p>
-
-<p>一个&nbsp;<code>k</code>&nbsp;阶由&nbsp;<em><code>1</code></em>&nbsp;组成的 <strong>“轴对称”加号标志</strong> 具有中心网格&nbsp;<code>grid[r][c] == 1</code>&nbsp;，以及4个从中心向上、向下、向左、向右延伸，长度为&nbsp;<code>k-1</code>，由&nbsp;<code>1</code>&nbsp;组成的臂。注意，只有加号标志的所有网格要求为 <code>1</code> ，别的网格可能为 <code>0</code> 也可能为 <code>1</code> 。</p>
-
-<p>&nbsp;</p>
-
-<p><strong>示例 1：</strong></p>
-
-<p><img src="https://assets.leetcode.com/uploads/2021/06/13/plus1-grid.jpg"></p>
-
+        <h2 id="题目描述">题目描述</h2>
+<div class="px-5 pt-4">
+<div class="_1l1MA">
+<p>
+在一个 <code>n x n</code>
+的矩阵 <code>grid</code> 中，除了在数组 <code>mines</code> 中给出的元素为 <code>0</code>，其他每个元素都为 <code>1</code>。<code>mines[i]
+= [x<sub>i</sub>,
+y<sub>i</sub>]</code>表示 <code>grid[x<sub>i</sub>][y<sub>i</sub>] ==
+0</code>
+</p>
+<p>
+返回 <em> </em><code>grid</code><em> 中包含 <code>1</code> 的最大的
+<strong>轴对齐</strong> 加号标志的阶数</em> 。如果未找到加号标志，则返回
+<code>0</code> 。
+</p>
+<p>
+一个 <code>k</code> 阶由 <em><code>1</code></em> 组成的
+<strong>“轴对称”加号标志</strong> 具有中心网格 <code>grid[r][c] ==
+1</code> ，以及4个从中心向上、向下、向左、向右延伸，长度为 <code>k-1</code>，由 <code>1</code> 组成的臂。注意，只有加号标志的所有网格要求为
+<code>1</code> ，别的网格可能为 <code>0</code> 也可能为 <code>1</code>
+。
+</p>
+<p>
+ 
+</p>
+<p>
+<strong>示例 1：</strong>
+</p>
+<p>
+<img src="https://assets.leetcode.com/uploads/2021/06/13/plus1-grid.jpg">
+</p>
 <pre><strong>输入:</strong> n = 5, mines = [[4, 2]]
 <strong>输出:</strong> 2
 <strong>解释: </strong>在上面的网格中，最大加号标志的阶只能是2。一个标志已在图中标出。
 </pre>
-
-<p><strong>示例 2：</strong></p>
-
-<p><img src="https://assets.leetcode.com/uploads/2021/06/13/plus2-grid.jpg"></p>
-
+<p>
+<strong>示例 2：</strong>
+</p>
+<p>
+<img src="https://assets.leetcode.com/uploads/2021/06/13/plus2-grid.jpg">
+</p>
 <pre><strong>输入:</strong> n = 1, mines = [[0, 0]]
 <strong>输出:</strong> 0
 <strong>解释: </strong>没有加号标志，返回 0 。
 </pre>
-
-<p>&nbsp;</p>
-
-<p><strong>提示：</strong></p>
-
+<p>
+ 
+</p>
+<p>
+<strong>提示：</strong>
+</p>
 <ul>
-    <li><code>1 &lt;= n &lt;= 500</code></li>
-    <li><code>1 &lt;= mines.length &lt;= 5000</code></li>
-    <li><code>0 &lt;= x<sub>i</sub>, y<sub>i</sub>&nbsp;&lt; n</code></li>
-    <li>每一对&nbsp;<code>(x<sub>i</sub>, y<sub>i</sub>)</code>&nbsp;都 <strong>不重复</strong>​​​​​​​</li>
+<li>
+<code>1 &lt;= n &lt;= 500</code>
+</li>
+<li>
+<code>1 &lt;= mines.length &lt;= 5000</code>
+</li>
+<li>
+<code>0 &lt;= x<sub>i</sub>, y<sub>i</sub> &lt; n</code>
+</li>
+<li>
+每一对 <code>(x<sub>i</sub>, y<sub>i</sub>)</code> 都
+<strong>不重复</strong>​​​​​​​
+</li>
 </ul>
-</div></div>
+</div>
+</div>
 <span id="more"></span>
-
-<hr>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><ul>
-<li>一开始想用侵蚀法写一下，离空洞最远的点的距离可能就是答案。<br>后来仔细一想，那样的话是求一个曼哈顿距离的最大圆半径，和找十字还是不一样。<br>找十字就只要在二维上找最大长度就好了。<br>另外侵蚀的复杂度：$O(n^3)$ n为边长<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> map[<span class="number">500</span>][<span class="number">500</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> lens[<span class="number">500</span>][<span class="number">500</span>][<span class="number">4</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">orderOfLargestPlusSign</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; mines)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;mines.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            map[mines[i][<span class="number">0</span>]][mines[i][<span class="number">1</span>]]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//left 2 right</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map[i][j]==<span class="number">1</span>)&#123;</span><br><span class="line">                    len=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    len++;</span><br><span class="line">                    lens[i][j][<span class="number">0</span>]=len;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//right to left</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map[i][j]==<span class="number">1</span>)&#123;</span><br><span class="line">                    len=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    len++;</span><br><span class="line">                    lens[i][j][<span class="number">1</span>]=len;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//up to down</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map[j][i]==<span class="number">1</span>)&#123;</span><br><span class="line">                    len=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    len++;</span><br><span class="line">                    lens[j][i][<span class="number">2</span>]=len;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//down to up</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map[j][i]==<span class="number">1</span>)&#123;</span><br><span class="line">                    len=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    len++;</span><br><span class="line">                    lens[j][i][<span class="number">3</span>]=len;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                ans=<span class="built_in">max</span>(ans,<span class="built_in">min</span>(&#123;lens[i][j][<span class="number">3</span>],lens[i][j][<span class="number">2</span>],lens[i][j][<span class="number">1</span>],lens[i][j][<span class="number">0</span>]&#125;));</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h3><ul>
-<li>Time: $O(n^2)$</li>
-<li>Space: $O(n^2)$</li>
-</ul>
-<h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><ul>
-<li>写leetcode题目还是不要用复杂的动态数据了，一次性开个大一点的2D array就好了。<br>本来是想动态写一个，后来觉得申明和删除都要for，太麻烦了。<br>以后还是写python水水好了。</li>
+<hr />
+<h2 id="解答">解答</h2>
+<ul>
+<li><p>一开始想用侵蚀法写一下，离空洞最远的点的距离可能就是答案。
+后来仔细一想，那样的话是求一个曼哈顿距离的最大圆半径，和找十字还是不一样。
+找十字就只要在二维上找最大长度就好了。 另外侵蚀的复杂度：<span
+class="math inline">\(O(n^3)\)</span> n为边长 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> map[<span class="number">500</span>][<span class="number">500</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> lens[<span class="number">500</span>][<span class="number">500</span>][<span class="number">4</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">orderOfLargestPlusSign</span><span class="params">(<span class="type">int</span> n, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; mines)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;mines.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">            map[mines[i][<span class="number">0</span>]][mines[i][<span class="number">1</span>]]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//left 2 right</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map[i][j]==<span class="number">1</span>)&#123;</span><br><span class="line">                    len=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    len++;</span><br><span class="line">                    lens[i][j][<span class="number">0</span>]=len;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//right to left</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map[i][j]==<span class="number">1</span>)&#123;</span><br><span class="line">                    len=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    len++;</span><br><span class="line">                    lens[i][j][<span class="number">1</span>]=len;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//up to down</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map[j][i]==<span class="number">1</span>)&#123;</span><br><span class="line">                    len=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    len++;</span><br><span class="line">                    lens[j][i][<span class="number">2</span>]=len;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//down to up</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            len=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=n<span class="number">-1</span>;j&gt;=<span class="number">0</span>;j--)&#123;</span><br><span class="line">                <span class="keyword">if</span> (map[j][i]==<span class="number">1</span>)&#123;</span><br><span class="line">                    len=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    len++;</span><br><span class="line">                    lens[j][i][<span class="number">3</span>]=len;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">                ans=<span class="built_in">max</span>(ans,<span class="built_in">min</span>(&#123;lens[i][j][<span class="number">3</span>],lens[i][j][<span class="number">2</span>],lens[i][j][<span class="number">1</span>],lens[i][j][<span class="number">0</span>]&#125;));</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure> ###
+Complexity</p></li>
+<li><p>Time: <span class="math inline">\(O(n^2)\)</span></p></li>
+<li><p>Space: <span class="math inline">\(O(n^2)\)</span> ##
+题外话</p></li>
+<li><p>写leetcode题目还是不要用复杂的动态数据了，一次性开个大一点的2D
+array就好了。 本来是想动态写一个，后来觉得申明和删除都要for，太麻烦了。
+以后还是写python水水好了。</p></li>
 </ul>
 
     </div>
@@ -378,8 +412,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
               <a href="/tags/%E9%87%8D%E5%BB%BA/" rel="tag"># 重建</a>
+              <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           </div>
 
         
@@ -415,7 +449,7 @@
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
