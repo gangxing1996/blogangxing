@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>kms_client</title>
+      <link href="/kms-client/"/>
+      <url>/kms-client/</url>
+      
+        <content type="html"><![CDATA[<p>In this post, we introduce the commands in CMD of Windows to connectKMS servers and activate local Windows and Office.</p><span id="more"></span><h2 id="set-kms-address">Set KMS address</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /skms kms.loli.beer</span><br></pre></td></tr></table></figure><p>KMS servers can be found in: <ahref="https://www.coolhub.top/tech-articles/kms_list.html">KMSaddresses</a></p><h2 id="manually-activate">Manually Activate</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure><h2 id="reference">Reference</h2><ul><li>https://www.zhihu.com/tardis/zm/art/81561582?source_id=1003</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Operations </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> KMS </tag>
+            
+            <tag> Windows </tag>
+            
+            <tag> Office </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PhaseDetectionAutofocusing</title>
+      <link href="/PhaseDetectionAutofocusing/"/>
+      <url>/PhaseDetectionAutofocusing/</url>
+      
+        <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2><p>Autofocus methods are distinguished as active, passive, or hybridtypes.</p><p>Active AF systems measure the distance to the subject independentlyof the optical system and subsequently adjust the optical system forcorrect focus. There are various ways to measure distance, includingultrasonic sound waves and infrared light.</p><p>Passive AF systems determine correct focus by performing passiveanalysis of the image that is entering the optical system. Theygenerally do not direct any energy, such as ultrasonic sound or infraredlight waves, toward the subject. Passive autofocusing can be achieved byphase detection or contrast measurement.</p><p>In this post, we are going to talk about Phase DetectionAutofocus.</p><span id="more"></span><hr /><h2 id="triangulation">Triangulation</h2><h2 id="reference">Reference</h2><ul><li>https://zhuanlan.zhihu.com/p/658852930?utm_id=0</li><li>https://danieltechdiary.com/2022/12/14/high-pixel-focus/</li><li>https://en.wikipedia.org/wiki/Autofocus</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> CV&amp;DIP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Auto Focusing </tag>
+            
+            <tag> Computational Photography </tag>
+            
+            <tag> Signal Processing </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode 1073. Adding Two Negabinary Numbers</title>
       <link href="/leetcode1073/"/>
       <url>/leetcode1073/</url>
@@ -539,6 +597,20 @@
         <content type="html"><![CDATA[<p>分享一个<span class="math inline">\(\LaTeX\)</span>的小抄。<span id="more"></span> <div class="pdf-container" data-target="https://wch.github.io/latexsheet/latexsheet-a4.pdf" data-height="1130px"></div></p>]]></content>
       
       
+      <categories>
+          
+          <category> Coding </category>
+          
+          <category> LaTeX </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> LaTeX </tag>
+            
+        </tags>
       
     </entry>
     
@@ -990,7 +1062,7 @@
       <link href="/hexo-plugin/"/>
       <url>/hexo-plugin/</url>
       
-        <content type="html"><![CDATA[<p>这一篇来介绍我都在Hexo中用了哪些插件。</p><p>讲讲安装方式和使用技巧。 <span id="more"></span></p><hr /><h2 id="hexo-renderer-pandoc"><ahref="https://github.com/wzpan/hexo-renderer-pandoc">hexo-renderer-pandoc</a></h2><p>在直接使用Hexo的默认markdown渲染器<code>hexo-renderer-marked</code>的时候，会发现因为markdown和<spanclass="math inline">\(\LaTeX\)</span>的语法冲突，如<code>\\</code>和<code>__</code>，会导致公式部分无法正常渲染。</p><h3 id="注意">注意</h3><ul><li>pandoc's markdown 和 standardmarkdown的语法上有一点点区别。pandoc中似乎需要很多额外的<em>换行</em>。</li><li>而且没法混合markdown和html来写了。如原本的<code>## &lt;center&gt;爱小康&lt;/center&gt;</code>需要写成<code>&lt;h2&gt;&lt;center&gt;爱小康&lt;/center&gt;&lt;/h2&gt;</code>。</li></ul><p>下面说一下如何安装<ahref="https://pandoc.org/">Pandoc</a>和其hexo插件：</p><ol type="1"><li><p>Install Pandoc</p><h3 id="ubuntu">Ubuntu</h3><p>Download <code>.deb</code> package on <ahref="https://github.com/jgm/pandoc/releases">github release</a> toinstall <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/jgm/pandoc/releases/download/<span class="variable">$Version</span>/pandoc-<span class="variable">$Version</span>-amd64.deb</span><br><span class="line">sudo dpkg -i pandoc-<span class="variable">$Version</span>-amd64.deb</span><br></pre></td></tr></table></figure></p><h3 id="macos-using-homebrew">MacOS using Homebrew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pandoc</span><br></pre></td></tr></table></figure></li><li><p>Uninstall hexo-renderer-marked <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br></pre></td></tr></table></figure></p></li><li><p>Install hexo-renderer-pandoc <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure></p></li></ol><h2 id="reference">Reference</h2><p>https://segmentfault.com/a/1190000007261752</p><hr /><h2 id="hexo-generator-search"><ahref="https://github.com/wzpan/hexo-generator-search">hexo-generator-search</a></h2><p>This plugin is used for generating a search index file, whichcontains all the necessary data of your articles that you can use towrite a local search engine for your blog.</p><p>This plugin is designed to hide posts, which means the posts will notbe shown on article lists, the homepage, or search results.</p><h3 id="install">Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><hr /><h2 id="hexo-deployer-git"><ahref="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></h2><p>A git deplyer plugin for Hexo to deploy to especially github.</p><h3 id="install-1">Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><h3 id="tips">Tips</h3><p>A sample configuration of this plugin in<code>_config.yml</code>.</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="comment"># Since password method was removed on github, please use SSH instead.</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:gangxing1996/blogangxing.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>这一篇来介绍我都在Hexo中用了哪些插件。</p><p>讲讲安装方式和使用技巧。 <span id="more"></span></p><hr /><h2 id="hexo-renderer-pandoc"><ahref="https://github.com/wzpan/hexo-renderer-pandoc">hexo-renderer-pandoc</a></h2><p>在直接使用Hexo的默认markdown渲染器<code>hexo-renderer-marked</code>的时候，会发现因为markdown和<spanclass="math inline">\(\LaTeX\)</span>的语法冲突，如<code>\\</code>和<code>__</code>，会导致公式部分无法正常渲染。</p><h3 id="注意">注意</h3><ul><li>pandoc's markdown 和 standardmarkdown的语法上有一点点区别。pandoc中似乎需要很多额外的<em>换行</em>。</li><li>而且没法混合markdown和html来写了。如原本的<code>## &lt;center&gt;爱小康&lt;/center&gt;</code>需要写成<code>&lt;h2&gt;&lt;center&gt;爱小康&lt;/center&gt;&lt;/h2&gt;</code>。</li></ul><p>下面说一下如何安装<ahref="https://pandoc.org/">Pandoc</a>和其hexo插件：</p><ol type="1"><li><p>Install Pandoc</p><h3 id="ubuntu">Ubuntu</h3><p>Download <code>.deb</code> package on <ahref="https://github.com/jgm/pandoc/releases">github release</a> toinstall <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/jgm/pandoc/releases/download/<span class="variable">$Version</span>/pandoc-<span class="variable">$Version</span>-amd64.deb</span><br><span class="line">sudo dpkg -i pandoc-<span class="variable">$Version</span>-amd64.deb</span><br></pre></td></tr></table></figure></p><h3 id="macos-using-homebrew">MacOS using Homebrew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pandoc</span><br></pre></td></tr></table></figure></li><li><p>Uninstall hexo-renderer-marked <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br></pre></td></tr></table></figure></p></li><li><p>Install hexo-renderer-pandoc <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure></p></li></ol><h2 id="reference">Reference</h2><p>https://segmentfault.com/a/1190000007261752</p><hr /><h2 id="hexo-generator-search"><ahref="https://github.com/wzpan/hexo-generator-search">hexo-generator-search</a></h2><p>This plugin is used for generating a search index file, whichcontains all the necessary data of your articles that you can use towrite a local search engine for your blog.</p><p>This plugin is designed to hide posts, which means the posts will notbe shown on article lists, the homepage, or search results.</p><h3 id="install">Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><hr /><h2 id="hexo-deployer-git"><ahref="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></h2><p>A git deplyer plugin for Hexo to deploy to especially github.</p><h3 id="install-1">Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><h3 id="tips">Tips</h3><p>A sample configuration of this plugin in<code>_config.yml</code>.</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="comment"># Since password method was removed on github, please use SSH instead.</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:gangxing1996/blogangxing.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure><hr /><h2 id="hexo-asset-link"><ahref="https://github.com/liolok/hexo-asset-link">hexo-asset-link</a></h2><p>Convert Markdown style asset links to HTML style ones.</p><h3 id="install-2">Install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -s hexo-asset-link</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
