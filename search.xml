@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>Leetcode</title>
+      <title>Leetcode 27. 移除元素</title>
       <link href="/leetcode27/"/>
       <url>/leetcode27/</url>
       
@@ -31,7 +31,7 @@
     
     
     <entry>
-      <title>kms_client</title>
+      <title>KMS Client</title>
       <link href="/kms-client/"/>
       <url>/kms-client/</url>
       
@@ -808,9 +808,9 @@
       
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> 重建 </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
       
