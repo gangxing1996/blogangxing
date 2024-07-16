@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>wire current capacity</title>
+      <link href="/wire-current-capacity/"/>
+      <url>/wire-current-capacity/</url>
+      
+        <content type="html"><![CDATA[<table style="width:100%;"><colgroup><col style="width: 27%" /><col style="width: 42%" /><col style="width: 30%" /></colgroup><thead><tr class="header"><th>nom. Cross-section</th><th>Max. permitted current rating</th><th>Max. permiited power</th></tr></thead><tbody><tr class="odd"><td>mm<span class="math inline">\(^2\)</span>(Copper)</td><td>approx. A</td><td>Watt(220V)</td></tr><tr class="even"><td>1.5</td><td>14.5</td><td>3190</td></tr><tr class="odd"><td>2.5</td><td>19.5</td><td>4290</td></tr><tr class="even"><td>4</td><td>26</td><td>5720</td></tr><tr class="odd"><td>6</td><td>34</td><td>7480</td></tr><tr class="even"><td>10</td><td>46</td><td>10120</td></tr></tbody></table><span id="more"></span><p>This table follows the standard GB/T 16895.6--2014/IEC60364-5-52:2009.</p><p>The cables are settled as in the following figure.</p><p><img src="/wire-current-capacity/2024-07-16-16-57-02.png" /></p><h2 id="reference">Reference</h2><p>There are some standards might be useful:</p><ul><li>GB/T 5226.1-2019 机械电气安全 机械电气设备 第1部分:通用技术条件</li><li>GB 19517-2023 国家电气设备安全技术规范</li><li>GB/T 16895.6-2014 低压电气装置 第5-52部分：电气设备的选择和安装布线系统</li><li>GB 51348-2019 民用建筑电气设计标准</li><li>GB 50210-2018 建筑装饰装修工程质量验收标准</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Wire Current Limit </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Leetcode 27. 移除元素</title>
       <link href="/leetcode27/"/>
       <url>/leetcode27/</url>
@@ -808,9 +827,9 @@
       
         <tags>
             
-            <tag> 重建 </tag>
-            
             <tag> Hexo </tag>
+            
+            <tag> 重建 </tag>
             
         </tags>
       
@@ -1020,7 +1039,7 @@
     
     
     <entry>
-      <title>Residence permit for orientation year in Netherland</title>
+      <title>Residence permit for orientation year in Netherlands</title>
       <link href="/nether-permit/"/>
       <url>/nether-permit/</url>
       
