@@ -4,12 +4,47 @@
   
     
     <entry>
-      <title>wire current capacity</title>
+      <title>Learning Vocabulary with Chatgpt</title>
+      <link href="/vocabGPT/"/>
+      <url>/vocabGPT/</url>
+      
+        <content type="html"><![CDATA[<p>在用 <strong>不背单词</strong>学习单词的时候，复杂的单词就没有资料。背的很痛苦。那么就可以让chatgpt生成笔记，以下以单词 <strong>“snug”</strong> 为例子：<span id="more"></span></p><h2 id="chatgpt-prompt">Chatgpt Prompt</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">snug这个单词怎么记。</span><br><span class="line">词源是什么，同源词，近义词，反义词有哪些。</span><br><span class="line">词频和语感如何。</span><br><span class="line">请给一些常见的搭配和例句。</span><br><span class="line">近义词请对比说明。</span><br><span class="line">回答中不要使用表格。</span><br></pre></td></tr></table></figure><h2 id="不背单词-笔记字数上限">不背单词 笔记字数上限</h2><p>不背单词的笔记，通常只有1000个字。</p><p>如果想要在笔记中输入更多的字，就在文本框里输入之后，用键盘快捷键保存。（字数检查写在前端里哈哈哈）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> English </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> English </tag>
+            
+            <tag> Chatgpt </tag>
+            
+            <tag> Prompt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Wire Current Capacity</title>
       <link href="/wire-current-capacity/"/>
       <url>/wire-current-capacity/</url>
       
-        <content type="html"><![CDATA[<table style="width:100%;"><colgroup><col style="width: 27%" /><col style="width: 42%" /><col style="width: 30%" /></colgroup><thead><tr class="header"><th>nom. Cross-section</th><th>Max. permitted current rating</th><th>Max. permiited power</th></tr></thead><tbody><tr class="odd"><td>mm<span class="math inline">\(^2\)</span>(Copper)</td><td>approx. A</td><td>Watt(220V)</td></tr><tr class="even"><td>1.5</td><td>14.5</td><td>3190</td></tr><tr class="odd"><td>2.5</td><td>19.5</td><td>4290</td></tr><tr class="even"><td>4</td><td>26</td><td>5720</td></tr><tr class="odd"><td>6</td><td>34</td><td>7480</td></tr><tr class="even"><td>10</td><td>46</td><td>10120</td></tr></tbody></table><span id="more"></span><p>This table follows the standard GB/T 16895.6--2014/IEC60364-5-52:2009.</p><p>The cables are settled as in the following figure.</p><p><img src="/wire-current-capacity/2024-07-16-16-57-02.png" /></p><h2 id="reference">Reference</h2><p>There are some standards might be useful:</p><ul><li>GB/T 5226.1-2019 机械电气安全 机械电气设备 第1部分:通用技术条件</li><li>GB 19517-2023 国家电气设备安全技术规范</li><li>GB/T 16895.6-2014 低压电气装置 第5-52部分：电气设备的选择和安装布线系统</li><li>GB 51348-2019 民用建筑电气设计标准</li><li>GB 50210-2018 建筑装饰装修工程质量验收标准</li></ul>]]></content>
+        <content type="html"><![CDATA[<table style="width:100%;"><colgroup><col style="width: 27%" /><col style="width: 42%" /><col style="width: 30%" /></colgroup><thead><tr class="header"><th>nom. Cross-section</th><th>Max. permitted current rating</th><th>Max. permitted power</th></tr></thead><tbody><tr class="odd"><td>mm<span class="math inline">\(^2\)</span>(Copper)</td><td>approx. A</td><td>Watt(220V)</td></tr><tr class="even"><td>1.5</td><td>14.5</td><td>3190</td></tr><tr class="odd"><td>2.5</td><td>19.5</td><td>4290</td></tr><tr class="even"><td>4</td><td>26</td><td>5720</td></tr><tr class="odd"><td>6</td><td>34</td><td>7480</td></tr><tr class="even"><td>10</td><td>46</td><td>10120</td></tr></tbody></table><span id="more"></span><p>This table follows the standard GB/T 16895.6--2014/IEC60364-5-52:2009.</p><p>The cables are settled as in the following figure.</p><p><img src="/wire-current-capacity/2024-07-16-16-57-02.png" /></p><h2 id="reference">Reference</h2><p>There are some standards might be useful:</p><ul><li>GB/T 5226.1-2019 机械电气安全 机械电气设备 第1部分:通用技术条件</li><li>GB 19517-2023 国家电气设备安全技术规范</li><li>GB/T 16895.6-2014 低压电气装置 第5-52部分：电气设备的选择和安装布线系统</li><li>GB 51348-2019 民用建筑电气设计标准</li><li>GB 50210-2018 建筑装饰装修工程质量验收标准</li></ul>]]></content>
       
+      
+      <categories>
+          
+          <category> Electric Engineer </category>
+          
+      </categories>
       
       
         <tags>
