@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#ffcbd6"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/kirby.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/kirby.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/kirby.jpg">
+  <link rel="mask-icon" href="/images/kirby.jpg" color="#ffcbd6">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="ESXi 意外断电后，OpenWrt 虚拟机可能无法启动，并提示虚拟磁盘损坏或无法打开。可以使用 ESXi 自带的 vmkfstools 检查并修复 VMDK 文件。 After an unexpected ESXi power failure, the OpenWrt VM may fail to start because its virtual disk is corrupted or ca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESXi 意外断电后修复 OpenWrt VMDK 镜像 &#x2F; Repair OpenWrt VMDK After ESXi Power Failure">
+<meta property="og:url" content="http://example.com/esxi-vmdk-fix/index.html">
+<meta property="og:site_name" content="Gangxing&#39;s Blog">
+<meta property="og:description" content="ESXi 意外断电后，OpenWrt 虚拟机可能无法启动，并提示虚拟磁盘损坏或无法打开。可以使用 ESXi 自带的 vmkfstools 检查并修复 VMDK 文件。 After an unexpected ESXi power failure, the OpenWrt VM may fail to start because its virtual disk is corrupted or ca">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-07-21T05:51:19.000Z">
+<meta property="article:modified_time" content="2026-07-21T05:51:19.000Z">
+<meta property="article:author" content="gangxing">
+<meta property="article:tag" content="AIGC">
+<meta property="article:tag" content="ESXi">
+<meta property="article:tag" content="OpenWrt">
+<meta property="article:tag" content="VMDK">
+<meta property="article:tag" content="VMware">
+<meta property="article:tag" content="Recovery">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/esxi-vmdk-fix/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/esxi-vmdk-fix/","path":"esxi-vmdk-fix/","title":"ESXi 意外断电后修复 OpenWrt VMDK 镜像 / Repair OpenWrt VMDK After ESXi Power Failure"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ESXi 意外断电后修复 OpenWrt VMDK 镜像 / Repair OpenWrt VMDK After ESXi Power Failure | Gangxing's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Gangxing's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-favourites"><a href="/favourites/" rel="section"><i class="fa-solid fa-bookmark fa-fw"></i>Favourites</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%B9%B6%E5%A4%87%E4%BB%BD-power-off-and-back-up"><span class="nav-text">1. 关闭虚拟机并备份 &#x2F;
+Power Off and Back Up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AE%E8%AE%A4%E7%A3%81%E7%9B%98%E6%96%87%E4%BB%B6-identify-the-disk"><span class="nav-text">2. 确认磁盘文件 &#x2F; Identify the
+Disk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5-vmdk-check-the-vmdk"><span class="nav-text">3. 检查 VMDK &#x2F; Check the VMDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E5%A4%8D-vmdk-repair-the-vmdk"><span class="nav-text">4. 修复 VMDK &#x2F; Repair the VMDK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E4%B8%BA%E6%96%B0%E7%A3%81%E7%9B%98-clone-to-a-new-disk"><span class="nav-text">5. 克隆为新磁盘 &#x2F; Clone to a
+New Disk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5-openwrt-verify-openwrt"><span class="nav-text">6. 检查 OpenWrt &#x2F; Verify
+OpenWrt</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="gangxing"
+      src="/images/kirby.jpg">
+  <p class="site-author-name" itemprop="name">gangxing</p>
+  <div class="site-description" itemprop="description">I am little Gangxing.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/GANGHSU" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;GANGHSU" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/gangxingTW/" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;gangxingTW&#x2F;" rel="noopener" target="_blank"><i class="fa-brands fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UCfamUYfs2Us_FaE9tTHAWaQ" title="youtube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UCfamUYfs2Us_FaE9tTHAWaQ" rel="noopener" target="_blank"><i class="fa-brands fa-youtube fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+  
+  
+
+  <link rel="stylesheet" href="/js/aplayer/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/js/aplayer/APlayer.min.js"></script>
+  <script type="text/javascript" src="/js/aplayer/aplayer.js"></script>
+
+  <div id="clock">
+  <canvas id="canvas" >
+  </div>
+  <script type="text/javascript" src="/js/canvas-dance-time.js"></script>
+
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/esxi-vmdk-fix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kirby.jpg">
+      <meta itemprop="name" content="gangxing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gangxing's Blog">
+      <meta itemprop="description" content="I am little Gangxing.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ESXi 意外断电后修复 OpenWrt VMDK 镜像 / Repair OpenWrt VMDK After ESXi Power Failure | Gangxing's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ESXi 意外断电后修复 OpenWrt VMDK 镜像 / Repair OpenWrt VMDK After ESXi Power Failure
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2026-07-21 13:51:19" itemprop="dateCreated datePublished" datetime="2026-07-21T13:51:19+08:00">2026-07-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Operation/" itemprop="url" rel="index"><span itemprop="name">Operation</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Operation/Virtualization/" itemprop="url" rel="index"><span itemprop="name">Virtualization</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>ESXi 意外断电后，OpenWrt
+虚拟机可能无法启动，并提示虚拟磁盘损坏或无法打开。可以使用 ESXi 自带的
+<code>vmkfstools</code> 检查并修复 VMDK 文件。</p>
+<p>After an unexpected ESXi power failure, the OpenWrt VM may fail to
+start because its virtual disk is corrupted or cannot be opened. The
+built-in <code>vmkfstools</code> utility can check and repair the VMDK
+file.</p>
+<span id="more"></span>
+<h2 id="关闭虚拟机并备份-power-off-and-back-up">1. 关闭虚拟机并备份 /
+Power Off and Back Up</h2>
+<p>确保 OpenWrt 虚拟机已经关闭。修复前建议备份虚拟机目录，至少保留原始
+VMDK 文件。</p>
+<p>Make sure the OpenWrt VM is powered off. Back up the VM directory, or
+at least keep a copy of the original VMDK files before repairing.</p>
+<p>通过 SSH 登录 ESXi：</p>
+<p>Log in to ESXi through SSH:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@ESXI_IP</span><br></pre></td></tr></table></figure>
+<p>进入 OpenWrt 虚拟机目录：</p>
+<p>Go to the OpenWrt VM directory:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /vmfs/volumes/DATASTORE_NAME/OpenWrt</span><br><span class="line"><span class="built_in">ls</span> -lh</span><br></pre></td></tr></table></figure>
+<h2 id="确认磁盘文件-identify-the-disk">2. 确认磁盘文件 / Identify the
+Disk</h2>
+<p>通常应操作体积较小的 VMDK 描述文件，例如：</p>
+<p>Use the small VMDK descriptor file, for example:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openwrt.vmdk</span><br><span class="line">openwrt-flat.vmdk</span><br></pre></td></tr></table></figure>
+<p>如果虚拟机使用快照，当前磁盘可能是：</p>
+<p>If snapshots exist, the active disk may look like:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openwrt-000001.vmdk</span><br><span class="line">openwrt-000001-delta.vmdk</span><br></pre></td></tr></table></figure>
+<p>不要直接对 <code>-flat.vmdk</code> 或 <code>-delta.vmdk</code>
+文件执行以下命令。</p>
+<p>Do not run the following commands directly against
+<code>-flat.vmdk</code> or <code>-delta.vmdk</code> files.</p>
+<h2 id="检查-vmdk-check-the-vmdk">3. 检查 VMDK / Check the VMDK</h2>
+<p>以当前虚拟机实际使用的 VMDK 描述文件为准：</p>
+<p>Use the VMDK descriptor currently attached to the VM:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools -x check openwrt.vmdk</span><br></pre></td></tr></table></figure>
+<p>部分 ESXi 版本也支持：</p>
+<p>Some ESXi versions also support:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools --fix check openwrt.vmdk</span><br></pre></td></tr></table></figure>
+<p>如果返回磁盘没有错误，可以重新启动虚拟机测试。</p>
+<p>If no errors are reported, try powering on the VM again.</p>
+<h2 id="修复-vmdk-repair-the-vmdk">4. 修复 VMDK / Repair the VMDK</h2>
+<p>如果检查结果提示需要修复，执行：</p>
+<p>If the check reports that repair is required, run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools -x repair openwrt.vmdk</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<p>Or:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools --fix repair openwrt.vmdk</span><br></pre></td></tr></table></figure>
+<p>修复完成后再次检查：</p>
+<p>Check the disk again after repairing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools -x check openwrt.vmdk</span><br></pre></td></tr></table></figure>
+<h2 id="克隆为新磁盘-clone-to-a-new-disk">5. 克隆为新磁盘 / Clone to a
+New Disk</h2>
+<p>为了避免继续使用可能存在隐患的原始磁盘，可以将其克隆为新的 VMDK：</p>
+<p>To avoid continuing to use a potentially damaged disk, clone it to a
+new VMDK:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vmkfstools -i openwrt.vmdk openwrt-recovered.vmdk -d thin</span><br></pre></td></tr></table></figure>
+<p>完成后，在 ESXi 管理界面中编辑 OpenWrt 虚拟机：</p>
+<p>After cloning, edit the OpenWrt VM in the ESXi web interface:</p>
+<ol type="1">
+<li>移除旧磁盘，但不要选择从数据存储中删除。</li>
+<li>添加“现有硬盘”。</li>
+<li>选择 <code>openwrt-recovered.vmdk</code>。</li>
+<li>保持原有磁盘控制器和启动顺序。</li>
+<li>启动虚拟机并检查 OpenWrt。</li>
+</ol>
+<p>English:</p>
+<ol type="1">
+<li>Remove the old disk without deleting it from the datastore.</li>
+<li>Add an <strong>Existing hard disk</strong>.</li>
+<li>Select <code>openwrt-recovered.vmdk</code>.</li>
+<li>Keep the original disk controller and boot order.</li>
+<li>Power on the VM and verify OpenWrt.</li>
+</ol>
+<h2 id="检查-openwrt-verify-openwrt">6. 检查 OpenWrt / Verify
+OpenWrt</h2>
+<p>OpenWrt 启动后，检查文件系统、网络接口和配置是否正常：</p>
+<p>After OpenWrt starts, verify the filesystem, network interfaces, and
+configuration:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">logread</span><br><span class="line">dmesg</span><br><span class="line"><span class="built_in">df</span> -h</span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+<p>确认系统稳定运行后，再择机删除旧磁盘文件。</p>
+<p>Delete the old disk files only after confirming that the recovered VM
+works correctly.</p>
+<blockquote>
+<p>注意：如果 VMDK
+描述文件丢失、快照链断裂，或者命令提示文件被锁定，不要反复执行修复。应先检查
+<code>.vmx</code> 中引用的磁盘、快照链和锁定状态。</p>
+<p>Note: If the VMDK descriptor is missing, the snapshot chain is
+broken, or the file is locked, do not repeatedly run repairs. First
+inspect the disk referenced by the <code>.vmx</code> file, the snapshot
+chain, and the lock status.</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://twitter.com/GANGHSU">
+          <span class="icon">
+            <i class="fab fa-twitter"></i>
+          </span>
+
+          <span class="label">Twitter</span>
+        </a>
+      </div>
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="https://steamcommunity.com/id/gangxingTW/">
+          <span class="icon">
+            <i class="fa-brands fa-steam"></i>
+          </span>
+
+          <span class="label">Steam</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/AIGC/" rel="tag"># AIGC</a>
+              <a href="/tags/ESXi/" rel="tag"># ESXi</a>
+              <a href="/tags/OpenWrt/" rel="tag"># OpenWrt</a>
+              <a href="/tags/VMDK/" rel="tag"># VMDK</a>
+              <a href="/tags/VMware/" rel="tag"># VMware</a>
+              <a href="/tags/Recovery/" rel="tag"># Recovery</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/vocabGPT/" rel="prev" title="Learning Vocabulary with Chatgpt">
+                  <i class="fa fa-chevron-left"></i> Learning Vocabulary with Chatgpt
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">gangxing</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdn.jsdelivr.net/npm/pdfobject@2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"gangxing1996","repo":"gangxing.blog.comment","client_id":"981fa59cdef461251b14","client_secret":"a4c379c3c3ca25de06a7884d74865be2c2cf7cab","admin_user":"gangxing1996","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"esxi-vmdk-fix"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+  
+</body>
+</html>
